@@ -1,0 +1,57 @@
+\Mysection{Benefits of Writing Comments First}
+
+\begin{frame}{Improving System Design}
+	\begin{itemize}
+		\item Comments force clear articulation of purpose and behavior
+		\item Documenting before coding reveals design problems early
+		\item Abstractions become more coherent and focused
+		\item Red flag: If it's hard to document, it's probably a poor design
+		\item \textit{``If you can't explain it simply, you don't understand it well enough.''} -- Einstein
+		
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{How Comments Reveal Design Flaws}
+	\centering
+	\begin{figure}
+		
+	
+	\begin{tikzpicture}[
+		node distance=2cm,
+		block/.style={rectangle, draw, rounded corners, minimum width=3cm, minimum height=1cm},
+		arrow/.style={->, >=stealth, thick}
+		]
+		\node[block] (doc) {Write documentation};
+		\node[block, below=of doc] (identify) {Identify unclear/complex explanations};
+		\node[block, right=of identify] (refine) {Refine design};
+		\node[block, above=of refine] (update) {Update documentation};
+		
+		\draw[arrow] (doc) -- (identify);
+		\draw[arrow] (identify) -- (refine);
+		\draw[arrow] (refine) -- (update);
+		\draw[arrow] (update) -- (doc);
+	\end{tikzpicture}
+	\caption{Design feedback loop}
+	\label{fig:design-loop}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Better Abstractions and Interfaces}
+	\begin{itemize}
+		\item Comments help identify the right level of abstraction
+		\item Enables "programming by contract" thinking
+		\item Clarifies dependencies and assumptions
+		\item Reduces cognitive load for users of your code
+		\item Focuses design on intention rather than implementation
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Team Communication}
+	\begin{itemize}
+		\item Documentation becomes a communication tool
+		\item Team members can review and refine interfaces before implementation
+		\item Enables parallel development with clearer boundaries
+		\item Facilitates code reviews by clarifying intent
+		\item Serves as training material for new team members
+	\end{itemize}
+\end{frame}
