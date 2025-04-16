@@ -1,0 +1,240 @@
+%%%%%
+%
+% $Autor: Salman Habib $
+% $Datum: 2023-04-15  $
+% $Pfad: githubtemplate/Template/Presentations/Template/slides/rename.tex $
+% $Version: 4620 $
+%
+%
+% !TeX encoding = utf8
+% !TeX root = Rename
+%
+%%%%%%
+
+
+
+\Mysection{Introduction}
+
+\STANDARD{Introduction}
+{ 
+	
+	%  \framesubtitle{Einleitung}	
+	
+	%  \begin{figure}[!h]
+		%    \centering
+		%    \input{images/s0-nach-s1}
+		%  \end{figure}
+	%
+	%  Wir müssen hier unterscheiden zwischen:
+	
+	\begin{itemize}
+		\item \textbf {What are comments?}
+		\begin{itemize}
+			\item Short, programmer-readable explanations or annotations written into source code.
+		\end{itemize}
+		\item \textbf {Why are comments important?}
+		\begin{itemize}
+			\item Although ignored by the computer while executing a program, writing effective comments is as important as the actual code itself.
+			\item Software always remains incomplete, and comments help explain the intent and functionality of code.
+		\end{itemize}
+		\item \textbf {Benefits of writing effective comments:}
+		\begin{itemize}
+			\item Improves code readability and maintainability.
+			\item Facilitates debugging and troubleshooting.
+			\item Helps other developers understand and use your code.
+		\end{itemize}
+		\item \textbf {Tips for writing effective comments:}
+		\begin{itemize}
+			\item Be clear and concise.
+			\item Write comments that add value and context to the code.
+			\item Use consistent formatting and style.
+			\item Keep comments up-to-date with code changes. \cite{Pykes:2022}
+		\end{itemize}
+		
+	\end{itemize}	 
+}
+
+
+\Mysection{Delayed Comments}
+
+\STANDARD{Delayed Comments are Bad Comments }
+% Mind Map using Tikz
+{ 
+	\begin{itemize}
+		\item Many developers put off writing documentation until the end of the development process.
+		\item This approach often leads to poor quality documentation or no documentation at all.
+		\item Delaying documentation can result in even more undocumented code.
+		\item Writing comments later in the process may produce unhelpful or irrelevant comments.
+	\end{itemize}
+	
+	
+}
+
+
+\Mysection{ Writing Comments at the
+	begining}
+
+\STANDARD{ Write the Comments First }
+{ 
+	
+	
+\begin{itemize}
+	\item Writing comments first makes documentation part of the design process.
+	\item This approach produces better designs and more enjoyable documentation writing process.
+	\item The comments-first approach ensures that there is never a backlog of unwritten comments.
+	\item It results in better comments as the key design issues are fresh in your mind.
+\end{itemize}
+
+		
+}
+\STANDARD{ Step-by-step guide on writing comments(Mind Map) }
+{
+	\begin{itemize}
+		\item For a new class, start by writing the class interface comment.
+		\item Write interface comments and signatures for the most important public methods, but leave the method bodies empty.
+		\item Iterate over these comments until the basic structure feels right.
+		\item Write declarations and comments for the most important class instance variables in the class.
+		\item Fill in the bodies of the methods, adding implementation comments as needed.
+	\end{itemize}
+
+}
+	
+	
+	\begin{center}
+	\centering
+	\begin{tikzpicture}[grow cyclic, text width=2.9cm, align=flush center,
+		level 1/.style={level distance=3.2cm,sibling angle=60},
+		level 2/.style={level distance=0.5cm,sibling angle=45}]
+		
+		\node{Steps to write comments at the begining  }
+		child { node {1. Class interface comment}}
+		child { node {2.Comments and signatures for IMP public methods}}
+		child { node {3. Iterate}}
+		child { node {4. Declarations and comments for class instance variables}}
+		child { node {5.  Fill the bodies of the methods}}
+		child { node {6. Add implementation comments as needed}}
+		;
+	\end{tikzpicture}
+	
+\end{center}
+	
+
+\Mysection{Benefits of writing Comments
+at the begining}
+
+\STANDARD{Benefits}
+{ 
+	
+		
+\begin{itemize}
+	\item Improves the system design.
+	\item Comments provide the only way to fully capture abstractions, which is fundamental to good system design.
+	\item Writing comments describing the abstractions at the beginning allows for review and tuning before writing implementation code.
+	\item A good comment identifies the essence of a variable or piece of code.
+	\item Good abstractions are fundamental to good system design.
+\end{itemize}
+
+
+}
+
+
+
+\Mysection{Tips on writing good
+	comments with Examples}
+
+
+\begin{itemize}
+	\item Write comments in complete sentences with proper grammar and punctuation.
+	\item Be concise and to the point: It’s also useful for summarizing a series of complicated operations: Writing a small comment that explains the intent of the following lines is useful to understand how they work together.
+	\item Describe why something is being done, not just what is being done: The reason is simple; code itself only tells you what is there, not why it is there. The motivations behind seemingly arbitrary choices in design and development are usually found in the documentation, but if you need to keep this information in the source code, comments are the best way of doing it.
+	\item Avoid repeating what the code is already saying.
+	\item Write comments from the perspective of someone who is reading the code for the first time.
+	\item Warning the user of a method about side effects: There are
+	methods with ’dangerous’ side effects. Some of them will perform
+	actions that are hard or impossible to revert or will remove records
+	from an important record. \cite{Best:2021}
+	
+	\textbf{Example}
+	\begin{verbatim}
+		# Warning!: This method will stop the pipeline and 
+		all unprocessed data will be lost,
+		# ensure the queue is empty before calling it, 
+		otherwise, you might lose data.
+		
+			def perform_teardown():
+		
+	\end{verbatim}	
+	\item \textbf{ TO-DO comments:}
+	\textbf{Example}
+	\begin{verbatim}
+		# TODO: Find out if there's an efficient alternative for 
+		linear algebra and make this method a wrapper
+		# around 2t
+		def transpose_matrix(matrix):
+		# code for transposing a matrix pass
+	\end{verbatim}
+	
+\end{itemize}
+
+\Mysection{Examples of good comments }
+
+\begin{itemize}
+	\item  A comment that describes why a particular approach was taken to
+	solve a problem.
+	\item A comment that describes the intended purpose of a piece of code.
+	\textbf {Example}
+
+\begin{verbatim}
+	
+	final Object value=(new JSONTokener(jsonString)).nextValue();
+	
+	// Note that JSONTokener.nextValue() 
+	may return a value equals to null.
+	
+	if (value == null || value.equals(null)) {
+		return null;
+	}
+	
+\end{verbatim}
+
+	\item A comment that provides additional context or clarification for a
+	piece of code.
+	\item A comment that points out potential issues or limitations of a piece
+	of code.	
+	\item Write comments from the perspective of someone who is reading the
+	code for the first time. \cite{Villalobos:2019}
+	
+	\textbf {Example}
+\begin{center}
+\begin{verbatim}
+/ NOTE: At least in Firefox 2,
+if the user drags outside of the browser window,
+/ mouse-move (and even mouse-down) 
+events will not be received
+until
+/ the user drags back inside the window.
+ A workaround for this issue
+/ exists in the implementation for onMouseLeave().
+\end{verbatim}
+	\texttt{@Override}
+	\texttt{public void onMouseMove(Widget sender, int x, int y) 1..}
+\end{center}
+
+
+	
+\end{itemize}
+
+
+\Mysection{Bad comments }
+\STANDARD {Bad comments }{
+\begin{itemize}
+	\item A comment that simply restates what the code is doing.
+	\item A comment that is too vague or incomplete to be useful.
+	\item A comment that is no longer accurate or relevant to the code it is
+	describing.
+	\item A comment that is too long or complicated. Ousterhout, 2018
+		.
+\end{itemize}
+
+
+}
