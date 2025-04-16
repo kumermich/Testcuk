@@ -22,7 +22,7 @@ This project is a collaborative effort to explore and document fundamental philo
 12. [Why Write Comments? The Four Excuses](#why-write-comments-the-four-excuses) - *Gautam Ramesh*
 13. [Comments Should Describe Things that Aren't Obvious from the Code](#comments-should-describe-things-that-arent-obvious-from-the-code) - *Sandesh Nonavinakere Sunil*
 14. [Choosing Names](#choosing-names) - *Nishan Chandrashekar Poojary*
-15. [Write The Comments First](#write-the-comments-first) - *Manoj Kumar*
+15. [Write The Comments First](./slides/Benefits.tex) 
 16. [Modifying Existing Code](#modifying-existing-code) - *Nanda Srikanth Saroj Kumar Nanda*
 17. [Consistency](#consistency) - *Yatan Upadhayaya*
 18. [Code Should be Obvious](#code-should-be-obvious) - *Sudhanshu Pukale*
