@@ -1,0 +1,91 @@
+\doxysection{Example.\+Data\+Preprocessing Class Reference}
+\hypertarget{class_example_1_1_data_preprocessing}{}\label{class_example_1_1_data_preprocessing}\index{Example.DataPreprocessing@{Example.DataPreprocessing}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_example_1_1_data_preprocessing_a8cc303250ee496562e8a4a257f063cd4}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, \mbox{\hyperlink{class_example_1_1_data_preprocessing_a31919153ad7bbc59c805cfe2975c3fa9}{url}}, \mbox{\hyperlink{class_example_1_1_data_preprocessing_acee94c01fd94c34e37c097ee7cfd89b0}{column\+\_\+names}})
+\item 
+\mbox{\hyperlink{class_example_1_1_data_preprocessing_a7d501f011e6af14c7a392c634e26bc39}{load\+\_\+data}} (self)
+\item 
+\mbox{\hyperlink{class_example_1_1_data_preprocessing_a2c152344c0e639039f391f6e06d8c24c}{split\+\_\+data}} (self, \mbox{\hyperlink{class_example_1_1_data_preprocessing_a76d6e0c1495ec4f3e71313a187317a7e}{dataset}}, train\+\_\+frac=0.\+8)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_example_1_1_data_preprocessing_a31919153ad7bbc59c805cfe2975c3fa9}{url}} = url
+\item 
+\mbox{\hyperlink{class_example_1_1_data_preprocessing_acee94c01fd94c34e37c097ee7cfd89b0}{column\+\_\+names}} = column\+\_\+names
+\item 
+\mbox{\hyperlink{class_example_1_1_data_preprocessing_a76d6e0c1495ec4f3e71313a187317a7e}{dataset}} = self.\+load\+\_\+data()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Class to handle data preprocessing, including loading and cleaning the dataset.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_example_1_1_data_preprocessing_a8cc303250ee496562e8a4a257f063cd4}\index{Example.DataPreprocessing@{Example.DataPreprocessing}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!Example.DataPreprocessing@{Example.DataPreprocessing}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily \label{class_example_1_1_data_preprocessing_a8cc303250ee496562e8a4a257f063cd4} 
+Example.\+Data\+Preprocessing.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{url}{, }\item[{}]{column\+\_\+names}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Initializes the DataPreprocessing class with dataset URL and column names.
+
+@param url: str The URL where the dataset is located.
+@param column_names: list The column names for the dataset.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_example_1_1_data_preprocessing_a7d501f011e6af14c7a392c634e26bc39}\index{Example.DataPreprocessing@{Example.DataPreprocessing}!load\_data@{load\_data}}
+\index{load\_data@{load\_data}!Example.DataPreprocessing@{Example.DataPreprocessing}}
+\doxysubsubsection{\texorpdfstring{load\_data()}{load\_data()}}
+{\footnotesize\ttfamily \label{class_example_1_1_data_preprocessing_a7d501f011e6af14c7a392c634e26bc39} 
+Example.\+Data\+Preprocessing.\+load\+\_\+data (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Loads the dataset from the provided URL and preprocesses it.
+
+@return: pd.DataFrame The cleaned dataset.
+\end{DoxyVerb}
+ \Hypertarget{class_example_1_1_data_preprocessing_a2c152344c0e639039f391f6e06d8c24c}\index{Example.DataPreprocessing@{Example.DataPreprocessing}!split\_data@{split\_data}}
+\index{split\_data@{split\_data}!Example.DataPreprocessing@{Example.DataPreprocessing}}
+\doxysubsubsection{\texorpdfstring{split\_data()}{split\_data()}}
+{\footnotesize\ttfamily \label{class_example_1_1_data_preprocessing_a2c152344c0e639039f391f6e06d8c24c} 
+Example.\+Data\+Preprocessing.\+split\+\_\+data (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{dataset}{, }\item[{}]{train\+\_\+frac}{ = {\ttfamily 0.8}}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Splits the dataset into training and test sets.
+
+@param dataset: pd.DataFrame The dataset to split.
+@param train_frac: float Fraction of the dataset to use for training.
+
+@return: Tuple[pd.DataFrame, pd.DataFrame] The training and test datasets.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_example_1_1_data_preprocessing_acee94c01fd94c34e37c097ee7cfd89b0}\index{Example.DataPreprocessing@{Example.DataPreprocessing}!column\_names@{column\_names}}
+\index{column\_names@{column\_names}!Example.DataPreprocessing@{Example.DataPreprocessing}}
+\doxysubsubsection{\texorpdfstring{column\_names}{column\_names}}
+{\footnotesize\ttfamily \label{class_example_1_1_data_preprocessing_acee94c01fd94c34e37c097ee7cfd89b0} 
+Example.\+Data\+Preprocessing.\+column\+\_\+names = column\+\_\+names}
+
+\Hypertarget{class_example_1_1_data_preprocessing_a76d6e0c1495ec4f3e71313a187317a7e}\index{Example.DataPreprocessing@{Example.DataPreprocessing}!dataset@{dataset}}
+\index{dataset@{dataset}!Example.DataPreprocessing@{Example.DataPreprocessing}}
+\doxysubsubsection{\texorpdfstring{dataset}{dataset}}
+{\footnotesize\ttfamily \label{class_example_1_1_data_preprocessing_a76d6e0c1495ec4f3e71313a187317a7e} 
+Example.\+Data\+Preprocessing.\+dataset = self.\+load\+\_\+data()}
+
+\Hypertarget{class_example_1_1_data_preprocessing_a31919153ad7bbc59c805cfe2975c3fa9}\index{Example.DataPreprocessing@{Example.DataPreprocessing}!url@{url}}
+\index{url@{url}!Example.DataPreprocessing@{Example.DataPreprocessing}}
+\doxysubsubsection{\texorpdfstring{url}{url}}
+{\footnotesize\ttfamily \label{class_example_1_1_data_preprocessing_a31919153ad7bbc59c805cfe2975c3fa9} 
+Example.\+Data\+Preprocessing.\+url = url}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_example_8py}{Example.\+py}}\end{DoxyCompactItemize}

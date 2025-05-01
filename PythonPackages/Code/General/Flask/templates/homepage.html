@@ -1,0 +1,26 @@
+<!--
+    Author: Sadegh Naderi
+    Date created: 14.08.2023
+    Path: BA23-14-Packages\report\Code\General\Flask\templates\homepage.html
+    Version: 1
+    Reviewed by: Sadegh Naderi
+    Review Date: 14.08.2023
+    -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    {% if title %}
+        <title>My Unique Flask Blog - {{ title }}</title>
+    {% else %}
+        <title>My Unique Flask Blog</title>
+    {% endif %}
+</head>
+<body>
+    {% for article in articles %}
+        <h1>{{ article.title }}</h1>
+        <p>Written by {{ article.author }} on {{ article.date_posted }}</p>
+        <p>{{ article.content }}</p>
+    {% endfor %}
+</body>
+</html>

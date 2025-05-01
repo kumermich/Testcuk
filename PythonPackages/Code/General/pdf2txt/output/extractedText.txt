@@ -1,0 +1,43 @@
+Page Page 1:
+Contact  
++1 (970) 343  888 999 
+george.evans@gmail.com  
+https://www.coolfreecv.com  
+32 ELM STREET MADISON, SD 
+57042  
+ George  Evans  
+PHP / OOP   
+Zend Framework  Summary  
+Senior Web Developer specializing in front end development . 
+Experienced with all stages of the development cycle for dynamic 
+web projects. Well -versed in numerous programming languages 
+including HTML5, PHP OOP, JavaScript, CSS, MySQL. Strong 
+background in project management and customer relations. 
+Perceived as versatile, unconventional and committed , I am 
+looking for new and interesting programming challenges.  
+Experience  
+Web Developer - 09/201 8 to 05/20 22 
+Luna Web Design, New York  
+• Cooperate with designers to create clean interfaces and 
+simple, intuitive interactions and experiences.  
+• Develop project c oncepts and maintain optimal workflow.  
+• Work with senior developer to manage large, complex 
+design projects for corporate clients.  
+• Complete detailed programming and development tasks 
+for front end public and internal websites as well as 
+challenging back -end server code.  
+• Carry out quality assurance tests to discover errors and 
+optimize usability.  
+Education  
+Bachelor of Science: Computer Information Systems  - 2018  
+Columbia University, NY  
+ 
+Certifications  
+PHP Framework (certificate): Zend, Codeigniter, Symfony. 
+Programming Languages: JavaScript, HTML5, PHP OOP, CSS, SQL, 
+MySQL.  
+Reference  
+Adam Smith - Luna Web Design  
+adam.smith@luna.com  +1(970 )555 555  Skills   
+JavaScript   Symfony Framework
+

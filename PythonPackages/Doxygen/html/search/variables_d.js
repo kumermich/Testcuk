@@ -1,0 +1,25 @@
+var searchData=
+[
+  ['r2_5ftest_5fdt_0',['r2_test_dt',['../namespace_regression_algorithms_documented.html#aa6ae8e89715046693c2de2c1ce040e4d',1,'RegressionAlgorithmsDocumented']]],
+  ['r2_5ftest_5fenet_1',['r2_test_enet',['../namespace_regression_algorithms_documented.html#a3f238f479d5f1caf58cd48c6a5d728f8',1,'RegressionAlgorithmsDocumented']]],
+  ['r2_5ftest_5flasso_2',['r2_test_lasso',['../namespace_regression_algorithms_documented.html#acdf80ab8e85f2e161f71d0e439d55f18',1,'RegressionAlgorithmsDocumented']]],
+  ['r2_5ftest_5flinear_3',['r2_test_linear',['../namespace_regression_algorithms_documented.html#a0dfedc3055adb72e2cd7d4fcab3a0932',1,'RegressionAlgorithmsDocumented']]],
+  ['r2_5ftest_5fpoly_4',['r2_test_poly',['../namespace_regression_algorithms_documented.html#acbec435886f9436ad62374b76659ff72',1,'RegressionAlgorithmsDocumented']]],
+  ['r2_5ftest_5fridge_5',['r2_test_ridge',['../namespace_regression_algorithms_documented.html#aceb3248a5bfe02ee160586bf6a082101',1,'RegressionAlgorithmsDocumented']]],
+  ['r2_5ftest_5fsvr_6',['r2_test_svr',['../namespace_regression_algorithms_documented.html#af4eb655c99844c13514344a0e77f0951',1,'RegressionAlgorithmsDocumented']]],
+  ['r2_5ftrain_5fdt_7',['r2_train_dt',['../namespace_regression_algorithms_documented.html#a692d39cbca24c26106b85293fa9ea754',1,'RegressionAlgorithmsDocumented']]],
+  ['r2_5ftrain_5fenet_8',['r2_train_enet',['../namespace_regression_algorithms_documented.html#ad1057d891740653a7b7b3dbd2b80d392',1,'RegressionAlgorithmsDocumented']]],
+  ['r2_5ftrain_5flasso_9',['r2_train_lasso',['../namespace_regression_algorithms_documented.html#a3211d5e89838ba00bfb1ee691b1580d0',1,'RegressionAlgorithmsDocumented']]],
+  ['r2_5ftrain_5flinear_10',['r2_train_linear',['../namespace_regression_algorithms_documented.html#ad2107774ee6ce470090cc6e604936205',1,'RegressionAlgorithmsDocumented']]],
+  ['r2_5ftrain_5fpoly_11',['r2_train_poly',['../namespace_regression_algorithms_documented.html#ae15145ea6b299221bf495aeeb1f7b758',1,'RegressionAlgorithmsDocumented']]],
+  ['r2_5ftrain_5fridge_12',['r2_train_ridge',['../namespace_regression_algorithms_documented.html#aad84a646a99c298e57d4ec5aa6c9243b',1,'RegressionAlgorithmsDocumented']]],
+  ['r2_5ftrain_5fsvr_13',['r2_train_svr',['../namespace_regression_algorithms_documented.html#a5929151b2daceb14913fc5068e2fcece',1,'RegressionAlgorithmsDocumented']]],
+  ['radius_14',['radius',['../class_inheritance_documented_1_1_circle.html#a8b8de095a161474d2d0e4181b6bf4275',1,'InheritanceDocumented::Circle']]],
+  ['random_5fstate_15',['random_state',['../namespace_regression_algorithms_documented.html#a6b671e09c027d7d82b63233a03b729e0',1,'RegressionAlgorithmsDocumented']]],
+  ['rectangle_16',['rectangle',['../namespace_inheritance_documented.html#ae798837d4686381c3b3ec9fbb4503bdc',1,'InheritanceDocumented']]],
+  ['result_17',['result',['../namespace_doxygen_manual.html#a0c4f575ab0ff31fdd18a014cd4e3f7c5',1,'DoxygenManual']]],
+  ['results_5fdf_18',['results_df',['../namespace_regression_algorithms_documented.html#aafe1799992b4e60a040cbfe45b2ea714',1,'RegressionAlgorithmsDocumented']]],
+  ['results_5fdict_19',['results_dict',['../namespace_regression_algorithms_documented.html#a1eef02f5fcb2fc2fb549d7115ba60a3b',1,'RegressionAlgorithmsDocumented']]],
+  ['ridge_5fmodel_20',['ridge_model',['../namespace_regression_algorithms_documented.html#a810eda2e7d936d617849605f220116e7',1,'RegressionAlgorithmsDocumented']]],
+  ['rounded_21',['rounded',['../namespace_regression_algorithms_documented.html#a59584824dbe58f5fe6ae24eac304faaf',1,'RegressionAlgorithmsDocumented']]]
+];

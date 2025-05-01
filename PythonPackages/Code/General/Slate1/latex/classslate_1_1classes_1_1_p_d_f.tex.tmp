@@ -1,0 +1,123 @@
+\doxysection{slate.\+classes.\+PDF Class Reference}
+\hypertarget{classslate_1_1classes_1_1_p_d_f}{}\label{classslate_1_1classes_1_1_p_d_f}\index{slate.classes.PDF@{slate.classes.PDF}}
+
+
+Inheritance diagram for slate.\+classes.\+PDF\+:
+% FIG 0
+
+
+Collaboration diagram for slate.\+classes.\+PDF\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classslate_1_1classes_1_1_p_d_f_a22d29be447d29d6c14a9bf6a93887ccf}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, file, password=\textquotesingle{}\textquotesingle{}, just\+\_\+text=1, check\+\_\+extractable=True, char\+\_\+margin=1.\+0, line\+\_\+margin=0.\+1, word\+\_\+margin=0.\+1)
+\item 
+\mbox{\hyperlink{classslate_1_1classes_1_1_p_d_f_a9039acdbff91097fd4388e9d0389beb1}{text}} (self, clean=True)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classslate_1_1classes_1_1_p_d_f_aec3884808fe551dcbbfe0ed266c00978}{parser}}
+\item 
+\mbox{\hyperlink{classslate_1_1classes_1_1_p_d_f_aa7e33e5a211619d04dab744c2a54eaa9}{laparams}}
+\item 
+\mbox{\hyperlink{classslate_1_1classes_1_1_p_d_f_a83258848f53a229f4a7a7a8b35fda430}{doc}}
+\item 
+\mbox{\hyperlink{classslate_1_1classes_1_1_p_d_f_a1f3816dcf3c6e46afed2b529410fd542}{resmgr}}
+\item 
+\mbox{\hyperlink{classslate_1_1classes_1_1_p_d_f_a358e2e7b3984f3a5a44dce4dc935d1bc}{device}}
+\item 
+\mbox{\hyperlink{classslate_1_1classes_1_1_p_d_f_a1be945e7ef7a6911375469e8bc080fb7}{interpreter}}
+\item 
+\mbox{\hyperlink{classslate_1_1classes_1_1_p_d_f_a473181ab0b0e5af5765b83f69e27d4b9}{metadata}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classslate_1_1classes_1_1_p_d_f_a23331292734f47a7da35c4c9e821bd97}{\+\_\+cleanup}} (self)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classslate_1_1classes_1_1_p_d_f_a22d29be447d29d6c14a9bf6a93887ccf}\index{slate.classes.PDF@{slate.classes.PDF}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!slate.classes.PDF@{slate.classes.PDF}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily \label{classslate_1_1classes_1_1_p_d_f_a22d29be447d29d6c14a9bf6a93887ccf} 
+slate.\+classes.\+PDF.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{file}{, }\item[{}]{password}{ = {\ttfamily \textquotesingle{}\textquotesingle{}}, }\item[{}]{just\+\_\+text}{ = {\ttfamily 1}, }\item[{}]{check\+\_\+extractable}{ = {\ttfamily True}, }\item[{}]{char\+\_\+margin}{ = {\ttfamily 1.0}, }\item[{}]{line\+\_\+margin}{ = {\ttfamily 0.1}, }\item[{}]{word\+\_\+margin}{ = {\ttfamily 0.1}}\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classslate_1_1classes_1_1_p_d_f_a23331292734f47a7da35c4c9e821bd97}\index{slate.classes.PDF@{slate.classes.PDF}!\_cleanup@{\_cleanup}}
+\index{\_cleanup@{\_cleanup}!slate.classes.PDF@{slate.classes.PDF}}
+\doxysubsubsection{\texorpdfstring{\_cleanup()}{\_cleanup()}}
+{\footnotesize\ttfamily \label{classslate_1_1classes_1_1_p_d_f_a23331292734f47a7da35c4c9e821bd97} 
+slate.\+classes.\+PDF.\+\_\+cleanup (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Frees lots of non-textual information, such as the fonts
+and images and the objects that were needed to parse the
+PDF.
+\end{DoxyVerb}
+ \Hypertarget{classslate_1_1classes_1_1_p_d_f_a9039acdbff91097fd4388e9d0389beb1}\index{slate.classes.PDF@{slate.classes.PDF}!text@{text}}
+\index{text@{text}!slate.classes.PDF@{slate.classes.PDF}}
+\doxysubsubsection{\texorpdfstring{text()}{text()}}
+{\footnotesize\ttfamily \label{classslate_1_1classes_1_1_p_d_f_a9039acdbff91097fd4388e9d0389beb1} 
+slate.\+classes.\+PDF.\+text (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{clean}{ = {\ttfamily True}}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns the text of the PDF as a single string.
+Options:
+
+  :clean:
+    Removes misc cruft, like lots of whitespace.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classslate_1_1classes_1_1_p_d_f_a358e2e7b3984f3a5a44dce4dc935d1bc}\index{slate.classes.PDF@{slate.classes.PDF}!device@{device}}
+\index{device@{device}!slate.classes.PDF@{slate.classes.PDF}}
+\doxysubsubsection{\texorpdfstring{device}{device}}
+{\footnotesize\ttfamily \label{classslate_1_1classes_1_1_p_d_f_a358e2e7b3984f3a5a44dce4dc935d1bc} 
+slate.\+classes.\+PDF.\+device}
+
+\Hypertarget{classslate_1_1classes_1_1_p_d_f_a83258848f53a229f4a7a7a8b35fda430}\index{slate.classes.PDF@{slate.classes.PDF}!doc@{doc}}
+\index{doc@{doc}!slate.classes.PDF@{slate.classes.PDF}}
+\doxysubsubsection{\texorpdfstring{doc}{doc}}
+{\footnotesize\ttfamily \label{classslate_1_1classes_1_1_p_d_f_a83258848f53a229f4a7a7a8b35fda430} 
+slate.\+classes.\+PDF.\+doc}
+
+\Hypertarget{classslate_1_1classes_1_1_p_d_f_a1be945e7ef7a6911375469e8bc080fb7}\index{slate.classes.PDF@{slate.classes.PDF}!interpreter@{interpreter}}
+\index{interpreter@{interpreter}!slate.classes.PDF@{slate.classes.PDF}}
+\doxysubsubsection{\texorpdfstring{interpreter}{interpreter}}
+{\footnotesize\ttfamily \label{classslate_1_1classes_1_1_p_d_f_a1be945e7ef7a6911375469e8bc080fb7} 
+slate.\+classes.\+PDF.\+interpreter}
+
+\Hypertarget{classslate_1_1classes_1_1_p_d_f_aa7e33e5a211619d04dab744c2a54eaa9}\index{slate.classes.PDF@{slate.classes.PDF}!laparams@{laparams}}
+\index{laparams@{laparams}!slate.classes.PDF@{slate.classes.PDF}}
+\doxysubsubsection{\texorpdfstring{laparams}{laparams}}
+{\footnotesize\ttfamily \label{classslate_1_1classes_1_1_p_d_f_aa7e33e5a211619d04dab744c2a54eaa9} 
+slate.\+classes.\+PDF.\+laparams}
+
+\Hypertarget{classslate_1_1classes_1_1_p_d_f_a473181ab0b0e5af5765b83f69e27d4b9}\index{slate.classes.PDF@{slate.classes.PDF}!metadata@{metadata}}
+\index{metadata@{metadata}!slate.classes.PDF@{slate.classes.PDF}}
+\doxysubsubsection{\texorpdfstring{metadata}{metadata}}
+{\footnotesize\ttfamily \label{classslate_1_1classes_1_1_p_d_f_a473181ab0b0e5af5765b83f69e27d4b9} 
+slate.\+classes.\+PDF.\+metadata}
+
+\Hypertarget{classslate_1_1classes_1_1_p_d_f_aec3884808fe551dcbbfe0ed266c00978}\index{slate.classes.PDF@{slate.classes.PDF}!parser@{parser}}
+\index{parser@{parser}!slate.classes.PDF@{slate.classes.PDF}}
+\doxysubsubsection{\texorpdfstring{parser}{parser}}
+{\footnotesize\ttfamily \label{classslate_1_1classes_1_1_p_d_f_aec3884808fe551dcbbfe0ed266c00978} 
+slate.\+classes.\+PDF.\+parser}
+
+\Hypertarget{classslate_1_1classes_1_1_p_d_f_a1f3816dcf3c6e46afed2b529410fd542}\index{slate.classes.PDF@{slate.classes.PDF}!resmgr@{resmgr}}
+\index{resmgr@{resmgr}!slate.classes.PDF@{slate.classes.PDF}}
+\doxysubsubsection{\texorpdfstring{resmgr}{resmgr}}
+{\footnotesize\ttfamily \label{classslate_1_1classes_1_1_p_d_f_a1f3816dcf3c6e46afed2b529410fd542} 
+slate.\+classes.\+PDF.\+resmgr}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/slate/\mbox{\hyperlink{classes_8py}{classes.\+py}}\end{DoxyCompactItemize}

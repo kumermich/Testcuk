@@ -1,0 +1,27 @@
+\doxysection{slate.\+utils Namespace Reference}
+\hypertarget{namespaceslate_1_1utils}{}\label{namespaceslate_1_1utils}\index{slate.utils@{slate.utils}}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceslate_1_1utils_ae64479c5948e19378b86d93e56c00f90}{normalise\+\_\+whitespace}} (s)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespaceslate_1_1utils_ae64479c5948e19378b86d93e56c00f90}\index{slate.utils@{slate.utils}!normalise\_whitespace@{normalise\_whitespace}}
+\index{normalise\_whitespace@{normalise\_whitespace}!slate.utils@{slate.utils}}
+\doxysubsubsection{\texorpdfstring{normalise\_whitespace()}{normalise\_whitespace()}}
+{\footnotesize\ttfamily \label{namespaceslate_1_1utils_ae64479c5948e19378b86d93e56c00f90} 
+slate.\+utils.\+normalise\+\_\+whitespace (\begin{DoxyParamCaption}\item[{}]{s}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Returns a string that has at most one whitespace
+character between non-whitespace characters. We
+leave a few extra spaces because most NLP parsers
+don't tend to care.
+
+>>> normalise_whitespace(' hi   there')
+' hi there'
+>>> normalise_whitespace('meh\n\n\f')
+'meh '
+\end{DoxyVerb}
+ 

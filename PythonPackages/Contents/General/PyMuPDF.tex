@@ -1,0 +1,64 @@
+%%%%%%%%%%%%%%%
+%
+% $Autor: Wings $
+% $Datum: 2020-02-24 14:30:26Z $
+% $Pfad: PythonPackages/Contents/General/PyMuPDF.tex $
+% $Version: 1792 $
+%
+% !TeX encoding = utf8
+% !TeX root = PythonPackages
+% !TeX TXS-program:bibliography = txs:///bibtex
+%
+%
+%%%%%%%%%%%%%%%
+
+\chapter{Package \PYTHON{PyMuPDF (MuPDF)}}
+ %https://pymupdf.readthedocs.io/en/latest/
+
+\section{Description}
+
+PyMuPDF, also known as MuPDF, is a Python library that provides both basic PDF operations and advanced text extraction functionalities. It offers developers a comprehensive toolkit for manipulating PDFs, including sophisticated text extraction capabilities.
+
+\section{Key Features}
+
+Following are the key features\cite{pymupd:2024a}, \cite{pymupd:2024b}: %https://pymupdf.readthedocs.io/en/latest/%https://pymupdf.readthedocs.io/en/latest/intro.html 
+
+\begin{itemize}
+    \item Basic PDF Operations: PyMuPDF facilitates fundamental PDF operations such as merging, splitting, and basic manipulation of PDF documents.
+    \item Advanced Text Extraction: PyMuPDF stands out with its advanced text extraction functionalities, allowing developers to retrieve detailed and structured text data from PDFs.
+        \item Cross-Platform Compatibility: 
+   	 \begin{itemize}
+    \item Python Compatibility: PyMuPDF does not support Python versions prior to 3.8
+    \item PDF Versions: PyMuPDF generally only supports Python versions that are still maintained by the Python Software Foundation. Once a Python version is being retired, PyMuPDF support will also be ended. 
+    \item PDF Types: PyMuPDF is a versatile library that works well with a variety of PDF types, including digitally-born PDF files, scanned PDF files, and OCRed (Optical Character Recognition) PDF files. It supports rendering PDF pages as images, extracting text, and providing access to the underlying structure of the PDF document. Therefore, it is suitable for handling a wide range of PDF formats, regardless of how the PDF content was generated or processed.
+	 \end{itemize}
+    \item Output format: Output is a plain text as it is coded in the original document. It can further converted into HTML, text blocks via Page.get\_text(“blocks”) and a list of single words via Page.get\_text(“words”). 
+    \item Status: Active and well-maintained, with regular updates and contributions from the community.
+\end{itemize}
+
+\section{Installation}
+
+To install PyMuPDF, you can use the pip package manager by running the following command in your terminal \cite{pymupdf:2024c}:%https://pymupdf.readthedocs.io/en/latest/installation.html
+
+\begin{itemize}
+    \item[] \SHELL{pip install pymupdf}
+\end{itemize}
+
+\section{Getting Started}
+
+After installation, you can integrate PyMuPDF into your Python scripts for both basic PDF operations and advanced text extraction. You can extract the test by using following code \cite{pymupdf:2024d}:%https://github.com/pymupdf/PyMuPDF/blob/main/README.md
+
+\begin{itemize}
+\item[] \PYTHON{import fitz }
+\item[] \PYTHON{doc = fitz.open("example.pdf") }
+\item[] \PYTHON{for page in doc: 
+  text = page.get\_text() }
+\end{itemize}
+
+
+\section{Further Resources}
+
+\begin{itemize}
+    \item PyMuPDF GitHub Repository: \href{https://github.com/pymupdf/PyMuPDF}{PyMuPDF}
+    \item For more details and advanced usage of PyMuPDF, refer to the PyMuPDF PyPI page and the official GitHub repository. \href{https://pymupdf.readthedocs.io/en/latest/}{PyMuPDF PyPI}
+\end{itemize}

@@ -1,0 +1,54 @@
+\chapter{Package \PYTHON{Camelot}}%https://readthedocs.org/projects/camelot-py/downloads/pdf/master/
+
+\section{Description:}
+\begin{itemize}
+    \item Camelot is a Python library designed specifically for extracting tables from PDFs. It provides developers with a specialized tool for efficiently retrieving tabular data from PDF documents \cite{camelot:2023}.
+\end{itemize}
+
+\section{Key Features:}
+Following are the key features \cite{camelot:2023}.
+\begin{itemize}
+    \item Table Extraction: Camelot excels in the extraction of tables from PDFs, streamlining the process of retrieving structured tabular data.
+    \item Configurability: Camelot gives you control over the table extraction process with tweakable settings.
+    \item Metrics: You can discard bad tables based on metrics like accuracy and whitespace, without having to manually look at each table.
+    \item Configurability: Camelot gives you control over the table extraction process with tweakable settings.
+    \item Status: Camelot is active and regularly kept up to date. 
+    \item Cross-Platform Compatibility: 
+    \begin{itemize}
+    \item Python Compatibility: Python 3.6, 3.7 and 3.8.  
+    \item PDF Versions: 
+    \item PDF Types: Camelot only works with text-based PDFs and not scanned documents. 
+    \end{itemize}
+    \item Output format: Each table is extracted into a pandas DataFrame, which seamlessly integrates into ETL and data analysis workflows. You can also export tables to multiple formats, which include CSV, JSON, Excel, HTML, Markdown, and Sqlite.
+\end{itemize}
+
+\begin{itemize}
+    \item Camelot is designed to be compatible with various operating systems, ensuring its versatility in different environments.
+\end{itemize}
+
+\section{Installation:}
+There are several ways to install camelot \cite{camelot:2023}:
+\begin{itemize}
+    \item Using pip: 
+    \item[] \SHELL{pip install camelot-py[base]}
+    \item Using conda: conda is a package manager and environment management system for the Anaconda distribution. It can be used to install Camelot from the conda-forge channel:
+    \item[] \SHELL{\$ conda install -c conda-forge camelot-py}
+    \item From the source code: You can install Camelot from source by cloning the GitHub repository and then simply using pip again.
+    \item[] \SHELL{\$ git clone https://www.github.com/camelot-dev/camelot}
+    \item[] \SHELL{\$ cd camelot}
+    \item[] \SHELL{\$ pip install ".[base]"}
+\end{itemize}
+
+\section{Getting Started:}
+After installation, you can integrate Camelot into your Python scripts for extracting tables from PDFs. Following is the example of one such script \cite{camelot:2023}:
+\begin{itemize}
+    \item[] \PYTHON{tables = camelot.read\_pdf('foo.pdf')}
+    \item[] \PYTHON{tables}
+    \item[] \PYTHON{tables[0]}
+    \item[] \PYTHON{tables[0].to\_csv('foo.csv')}
+\end{itemize}
+\section{Further Resources:}
+\begin{itemize}
+    \item Camelot GitHub Repository: \url{https://github.com/camelot-dev/camelot}
+    \item For more details and advanced usage of Camelot, refer to the Camelot PyPI page and the official GitHub repository.
+\end{itemize}

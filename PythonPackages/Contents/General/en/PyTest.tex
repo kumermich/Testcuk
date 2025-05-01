@@ -1,0 +1,141 @@
+%%%
+%
+% $Autor: Wings $
+% $Datum: 2021-05-14 $
+% $Dateiname: 
+% $Version: 4620 $
+%
+% !TeX spellcheck = GB
+% !TeX program = pdflatex
+% !TeX encoding = utf8
+%
+%%%
+
+
+\chapter{Package \PYTHON{PyTest}}
+\index{PyTest}
+
+\section{Introduction}
+\index{PyTest!Introduction}
+PyTest is a popular testing framework for Python, known for its simplicity and powerful features. It allows writing simple unit tests as well as complex functional tests.
+
+\section{Description}
+\index{PyTest!Description}
+PyTest provides an easy way to write, organize, and run tests using Python. It supports fixtures, parameterized testing, and powerful assertions, making testing efficient and scalable.
+
+\section{Installation}
+\index{PyTest!Installation}
+To install PyTest, use the following command:
+
+\begin{verbatim}
+pip install pytest
+\end{verbatim}
+
+You can verify the installation with:
+
+\begin{verbatim}
+pytest --version
+\end{verbatim}
+
+\section{Example - Writing a Simple Test}
+
+Create a Python file named \texttt{test\_example.py} and add the following code:
+
+\begin{lstlisting}[language=Python, caption=Basic PyTest Example]
+"""
+@file test_example.py
+@brief This file contains a basic test case using PyTest.
+@date \today
+"""
+
+def test_addition():
+    """Test that addition works correctly."""
+    assert 1 + 1 == 2
+
+# Run the test with:
+# pytest test_example.py
+\end{lstlisting}
+
+To execute the test, open a terminal and run:
+
+\begin{verbatim}
+pytest test_example.py
+\end{verbatim}
+
+\section{Example - Using Fixtures}
+Fixtures allow setting up test preconditions and dependencies. Here's an example:
+
+\begin{lstlisting}[language=Python, caption=Using Fixtures in PyTest]
+"""
+@file test_fixtures.py
+@brief Demonstrates the use of fixtures in PyTest.
+@date \today
+"""
+
+import pytest
+
+@pytest.fixture
+def sample_data():
+    """Provides sample data for test cases."""
+    return [1, 2, 3, 4, 5]
+
+def test_length(sample_data):
+    """Test that the sample data has the correct length."""
+    assert len(sample_data) == 5
+\end{lstlisting}
+
+\section{Example - Parameterized Testing}
+Parameterized tests allow running a test function with multiple sets of inputs. Example:
+
+\begin{lstlisting}[language=Python, caption=Parameterized Test in PyTest]
+"""
+@file test_parametrize.py
+@brief Demonstrates parameterized testing in PyTest.
+@date \today
+"""
+
+import pytest
+
+@pytest.mark.parametrize("a, b, expected", [
+    (1, 2, 3),
+    (4, 5, 9),
+    (10, 15, 25)
+])
+def test_addition(a, b, expected):
+    """Test that addition works correctly with different inputs."""
+    assert a + b == expected
+\end{lstlisting}
+
+\section{Example - Checking Test Coverage}
+To check test coverage, install `pytest-cov`:
+
+\begin{verbatim}
+pip install pytest-cov
+\end{verbatim}
+
+Run tests with coverage:
+
+\begin{verbatim}
+pytest --cov=my_package
+\end{verbatim}
+
+\section{Further Reading}
+\begin{itemize}
+    \item Official PyTest Documentation: \href{https://docs.pytest.org/}{here}
+    \item Real Python's PyTest Guide: \href{https://realpython.com/pytest-python-testing/}{here}
+\end{itemize}
+
+\nocite{Abadi:2016}
+
+	% Überschrift ein Level unter `refsection=chapter`, also \section*:
+   \printbibliography[heading=subbibliography, segment=\therefsegment]
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,267 @@
+% https://dev.to/scofieldidehen/13-powerful-python-snippets-to-automate-tasks-10c1
+
+
+\chapter{13 Powerful Python Snippets To Automate Tasks}
+
+Python, a versatile programming language, provides various functionalities and libraries to automate tasks effectively.
+
+In this article, we will explore 13 advanced Python snippets that can automate cool and useful tasks, enabling you to save valuable time and effort.
+
+From automating Google search results to retrieving Wi-Fi passwords, downloading YouTube videos, and more, these code snippets will empower you to accomplish tasks seamlessly. Let's dive into the world of automation with Python!
+
+\section{Automating Google Search Results}
+
+\begin{lstlisting}
+from googlesearch import search
+  
+query = "Medium.com"
+  
+for result in search(query, num=10, stop=10, pause=2):
+  print(result)
+\end{lstlisting}
+
+
+This snippet utilizes the googlesearch library to fetch Google search results. Provide a query, and the snippet will return the top search results.
+
+\section{Speed Testing with Python}
+
+\begin{lstlisting}
+from speedtest import Speedtest
+
+test = Speedtest()
+
+# Download Speed
+print(test.download())
+
+# Upload Speed
+print(test.upload())
+
+# Ping test
+server_names = []
+test.get_servers(server_names)
+print(test.results.ping)
+\end{lstlisting}
+
+
+Using the speedtest library, this snippet measures the download speed, upload speed, and ping of your internet connection.
+
+\section{Sending Emails with Attachments}
+
+\begin{lstlisting}
+import smtplib, ssl
+from email import encoders
+from email.mime.base import MIMEBase
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+
+sender_email = 'sender@gmail.com'
+password = 'xxxxxxxx'
+receiver_address = 'receiver@gmail.com'
+body = "This is a test Python email"
+
+message = MIMEMultipart()
+message["From"] = "sender@gmail.com"
+message["To"] = "receiver@gmail.com"
+message["Subject"] = "Python Mail"
+message["Bcc"] = "receiver@gmail.com"
+
+message.attach(MIMEText(body, "plain"))
+
+filename = "excel.xlsx"
+
+with open(filename, "rb") as attachment:
+    part = MIMEBase("application", "octet-stream")
+    part.set_payload(attachment.read())
+
+encoders.encode_base64(part)
+print("Email Sent")
+\end{lstlisting}
+
+This snippet demonstrates sending emails with attachments using the smtplib and email libraries. It allows you to compose and send emails programmatically.
+
+\section{Converting PDF to Images}
+
+\begin{lstlisting}
+import fitz
+
+filename = "test.pdf"
+pdf = fitz.open(filename)
+
+for page in pdf:
+    img = page.get_pixmap(alpha=False)
+    img.writePNG('page-%i.png' % page.number)
+\end{lstlisting}
+
+With the help of the fitz library, this snippet converts each page of a PDF file into individual image files.
+
+\section{Transforming Text into Art}
+
+
+\begin{lstlisting}
+from art import text2art, tprint, art
+
+print(text2art("default"))
+tprint("Python", font="block", chr_ignore=True)
+print(art("coffee"))
+\end{lstlisting}
+
+The art library empowers this snippet to convert plain text into artistic representations such as ASCII or stylized text.
+
+\section{Retrieving File Size}
+
+
+\begin{lstlisting}
+import os
+
+file_path = "excel.xlsx"
+size = os.stat(file_path)
+filesize = size.st_size
+print(filesize, "bytes") # 9520 bytes
+\end{lstlisting}
+
+By utilizing the os library, this snippet retrieves the size of a file in bytes, providing valuable information for file management and analysis.
+
+\section{Obtaining Wi-Fi Passwords}
+
+\begin{lstlisting}
+import subprocess
+
+network = subprocess.check_output(['netsh', 'wlan', 'show', 'profiles']).decode('utf-8').split('\n')
+profiles = [i.split(":")[1][1:-1] for i in network if "All User Profile" in i]
+
+for profile in profiles:
+    results = subprocess.check_output(['netsh', 'wlan', 'show', 'profile', profile, 'key=clear']).decode('utf-8').split('\n')
+    results = [net.split(":")[1][1:-1] for net in results if "Key Content" in net]
+    print("{:<30}|  {:<}".format(profile, results[0]))
+\end{lstlisting}
+
+This snippet uses the subprocess library to retrieve saved Wi-Fi passwords on your computer, simplifying network management.
+
+\section{URL Shortening}
+
+\begin{lstlisting}
+from pyshorteners import Shortener
+
+link = "https://medium.com/"
+s = Shortener()
+shortened_url = s.tinyurl.short(link)
+\end{lstlisting}
+
+\section{Getting IP Address}
+
+\begin{lstlisting}
+import socket
+
+s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+s.connect(("8.8.8.8", 80))
+ip_addr = s.getsockname()[0]
+s.close()
+print(ip_addr)
+\end{lstlisting}
+
+Using the pyshorteners library, this snippet shortens long URLs into more compact and shareable versions.
+
+\section{Website Screenshotting}
+
+\begin{lstlisting}
+from selenium import webdriver
+import time
+
+driver = webdriver.Chrome("chromedriver.exe")
+driver.maximize_window()
+driver.get("https://medium.com/")
+time.sleep(3)
+driver.save_screenshot("shot.jpg")
+\end{lstlisting}
+
+With the selenium library, this snippet captures screenshots of websites, enabling automated website testing, monitoring, or documentation.
+
+\section{Unzipping Files}
+
+\begin{lstlisting}
+import zipfile
+
+unzip = zipfile.ZipFile("filename.zip")
+unzip.extractall()
+\end{lstlisting}
+
+This snippet uses the zipfile library to extract files and folders from a compressed zip file.
+
+\section{Downloading YouTube Videos}
+
+\begin{lstlisting}
+import pytube
+
+link = "Youtube video url here"
+youtube = pytube.YouTube(link)
+video = youtube.streams.get_highest_resolution()
+video.download()
+# or
+video.download('save location')
+\end{lstlisting}
+
+Utilizing the pytube library, this snippet lets you download YouTube videos in the highest resolution or to a specified location.
+
+\section{Extracting Exif Data from Photos}
+
+\begin{lstlisting}
+import PIL.Image
+import PIL.ExifTags
+
+img = PIL.Image.open("img.png")
+
+exif = {
+    PIL.ExifTags.TAGS[key]: value
+    for key, value in img._getexif().items()
+    if key in PIL.ExifTags.TAGS
+}
+print(exif)
+\end{lstlisting}
+
+With the help of the PIL (Python Imaging Library), this snippet extracts Exif metadata from images, providing information about camera settings and more.
+
+\section{How To Run a Python File}
+
+To run a Python file that contains the provided code snippet on the terminal, follow these step-by-step instructions:
+
+Open a text editor or an Integrated Development Environment (IDE) and create a new file.
+
+Copy and paste the code snippet into the newly created file.
+Save the file with a extension \FILE{.py}, such as \FILE{exif\_extractor.py}, in a location of your choice.
+
+Open a terminal or command prompt on your computer.
+
+Navigate to the directory where you saved the Python file using the cd command. For example, if the file is saved on the desktop, you can use the following command:
+
+\medskip
+
+\SHELL{cd Desktop}
+
+\medskip
+
+
+Once you are in the correct directory, you can run the Python file by executing the following command in the terminal:
+
+\medskip
+
+\SHELL{python exif\_extractor.py}
+
+\medskip
+
+This assumes that you have Python installed on your system and the python command is configured in your system's PATH variable.
+
+Press Enter to execute the command.
+
+The code will be executed, and if there are no errors, the output containing the extracted Exif data from the provided image file (img.png ) will be displayed in the terminal.
+
+Before running the code, ensure you have installed the necessary dependencies, such as the PIL library.
+
+You can install the required libraries by using the pip package manager. For example, to install the PIL library, you can execute the following command in the terminal:
+
+\section{Conclusion}
+
+You can easily automate tasks by incorporating these 13 powerful Python snippets into your projects.
+
+From fetching search results, measuring network speed, sending emails and converting file formats, these code snippets will significantly enhance your productivity.
+
+Experiment with these snippets and explore the possibilities of automation using Python. Start automating the cool stuff today and enjoy the benefits of streamlined workflows and increased efficiency. Happy coding!

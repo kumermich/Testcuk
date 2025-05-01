@@ -1,0 +1,20 @@
+var searchData=
+[
+  ['marker_0',['marker',['../namespace_regression_algorithms_documented.html#ac6e80381c5e1f6f9185ca8db3d6b5443',1,'RegressionAlgorithmsDocumented']]],
+  ['max_5fdepth_1',['max_depth',['../namespace_regression_algorithms_documented.html#afde387d492cde8df063b505a2f98b7f6',1,'RegressionAlgorithmsDocumented']]],
+  ['model_2',['model',['../namespace_regression_algorithms_documented.html#af70512894e8805b170e545202d74359d',1,'RegressionAlgorithmsDocumented.model()'],['../namespace_time_series_forecasting_documented.html#a7162d777d955abd2f4d97c590c63433f',1,'TimeSeriesForecastingDocumented.model()']]],
+  ['mse_5ftest_5fdt_3',['mse_test_dt',['../namespace_regression_algorithms_documented.html#a33d85a9defd354a9b0de3170a7397824',1,'RegressionAlgorithmsDocumented']]],
+  ['mse_5ftest_5fenet_4',['mse_test_enet',['../namespace_regression_algorithms_documented.html#a49818ef4c20bbbeb297c6a08b8d9d73c',1,'RegressionAlgorithmsDocumented']]],
+  ['mse_5ftest_5flasso_5',['mse_test_lasso',['../namespace_regression_algorithms_documented.html#ae9f5f8df841e9dfddf5f530a54f9f55d',1,'RegressionAlgorithmsDocumented']]],
+  ['mse_5ftest_5flinear_6',['mse_test_linear',['../namespace_regression_algorithms_documented.html#a4abd759d7a93f65cd8f39fa51e03f583',1,'RegressionAlgorithmsDocumented']]],
+  ['mse_5ftest_5fpoly_7',['mse_test_poly',['../namespace_regression_algorithms_documented.html#a2fb657e421707c8141d47f92c1c4d929',1,'RegressionAlgorithmsDocumented']]],
+  ['mse_5ftest_5fridge_8',['mse_test_ridge',['../namespace_regression_algorithms_documented.html#a62918e0fb52e14898897c83a8812cd99',1,'RegressionAlgorithmsDocumented']]],
+  ['mse_5ftest_5fsvr_9',['mse_test_svr',['../namespace_regression_algorithms_documented.html#a4d1e1f9e599d460794a387965a18e157',1,'RegressionAlgorithmsDocumented']]],
+  ['mse_5ftrain_5fdt_10',['mse_train_dt',['../namespace_regression_algorithms_documented.html#a2f238e3eb362f40b3bd0b6b15701a395',1,'RegressionAlgorithmsDocumented']]],
+  ['mse_5ftrain_5fenet_11',['mse_train_enet',['../namespace_regression_algorithms_documented.html#aa621305e5511346d01bee3261021ba46',1,'RegressionAlgorithmsDocumented']]],
+  ['mse_5ftrain_5flasso_12',['mse_train_lasso',['../namespace_regression_algorithms_documented.html#a7960a5dd55e8bbe1fecddc58733ae30d',1,'RegressionAlgorithmsDocumented']]],
+  ['mse_5ftrain_5flinear_13',['mse_train_linear',['../namespace_regression_algorithms_documented.html#a8ea4a8d1045a62443c2ddd630906fc15',1,'RegressionAlgorithmsDocumented']]],
+  ['mse_5ftrain_5fpoly_14',['mse_train_poly',['../namespace_regression_algorithms_documented.html#a7c308bf9db59a1988af5526a1435f7e3',1,'RegressionAlgorithmsDocumented']]],
+  ['mse_5ftrain_5fridge_15',['mse_train_ridge',['../namespace_regression_algorithms_documented.html#a63b65ed62120f810ef99143d059ba4e2',1,'RegressionAlgorithmsDocumented']]],
+  ['mse_5ftrain_5fsvr_16',['mse_train_svr',['../namespace_regression_algorithms_documented.html#a2f52641e786f5bf1f124b9da720228eb',1,'RegressionAlgorithmsDocumented']]]
+];

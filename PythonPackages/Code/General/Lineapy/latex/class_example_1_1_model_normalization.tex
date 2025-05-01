@@ -1,0 +1,61 @@
+\doxysection{Example.\+Model\+Normalization Class Reference}
+\hypertarget{class_example_1_1_model_normalization}{}\label{class_example_1_1_model_normalization}\index{Example.ModelNormalization@{Example.ModelNormalization}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_example_1_1_model_normalization_a16dd095c6edf07eead2b62fed1daf7d8}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, \mbox{\hyperlink{namespace_example_ad823c257fc30cabf89d0a9d1e538d414}{train\+\_\+features}})
+\item 
+\mbox{\hyperlink{class_example_1_1_model_normalization_a49c98c700c06815518b9274a6e39d4a4}{normalize}} (self, features)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_example_1_1_model_normalization_adc969f3aeb49324241e94243d64a350d}{normalizer}} = tf.\+keras.\+layers.\+Normalization(axis=-\/1)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Class for normalizing the data to improve training performance.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_example_1_1_model_normalization_a16dd095c6edf07eead2b62fed1daf7d8}\index{Example.ModelNormalization@{Example.ModelNormalization}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!Example.ModelNormalization@{Example.ModelNormalization}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily \label{class_example_1_1_model_normalization_a16dd095c6edf07eead2b62fed1daf7d8} 
+Example.\+Model\+Normalization.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{train\+\_\+features}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Initializes the normalizer.
+
+@param train_features: np.ndarray The features used to fit the normalizer.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_example_1_1_model_normalization_a49c98c700c06815518b9274a6e39d4a4}\index{Example.ModelNormalization@{Example.ModelNormalization}!normalize@{normalize}}
+\index{normalize@{normalize}!Example.ModelNormalization@{Example.ModelNormalization}}
+\doxysubsubsection{\texorpdfstring{normalize()}{normalize()}}
+{\footnotesize\ttfamily \label{class_example_1_1_model_normalization_a49c98c700c06815518b9274a6e39d4a4} 
+Example.\+Model\+Normalization.\+normalize (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{features}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Normalizes the provided features.
+
+@param features: np.ndarray The features to normalize.
+
+@return: np.ndarray The normalized features.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_example_1_1_model_normalization_adc969f3aeb49324241e94243d64a350d}\index{Example.ModelNormalization@{Example.ModelNormalization}!normalizer@{normalizer}}
+\index{normalizer@{normalizer}!Example.ModelNormalization@{Example.ModelNormalization}}
+\doxysubsubsection{\texorpdfstring{normalizer}{normalizer}}
+{\footnotesize\ttfamily \label{class_example_1_1_model_normalization_adc969f3aeb49324241e94243d64a350d} 
+Example.\+Model\+Normalization.\+normalizer = tf.\+keras.\+layers.\+Normalization(axis=-\/1)}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_example_8py}{Example.\+py}}\end{DoxyCompactItemize}

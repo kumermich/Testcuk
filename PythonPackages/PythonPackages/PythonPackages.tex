@@ -1,0 +1,180 @@
+%%%%%%%%%%%%%%%
+%
+% $Autor: Wings $
+% $Datum: 2020-02-24 14:30:26Z $
+% $Pfad: PythonPackages/PythonPackages/PythonPackages.tex $
+% $Version: 1792 $
+%
+% !TeX encoding = utf8
+% !TeX root = PythonPackages
+% !TeX TXS-program:bibliography = txs:///bibtex
+% !TeX program = LuaLaTeX
+%
+%
+%%%%%%%%%%%%%%%
+
+
+
+
+%%%%%%%%%%%%%%%
+%
+% Auswahl der Sprache
+% Die nicht gewünschte Sprache muss auskommentiert werden:
+%\def\isGerman{1}
+\def\isEnglish{1}
+%
+%%%%%%%%%%%%%%%
+
+
+\documentclass[10pt,a4paper,bibliography=totoc]{scrbook}
+
+\usepackage[backend=biber, style=alphabetic]{biblatex} % Correct way to specify a style
+
+
+\input{../General/packages}
+\input{../General/commands}
+\input{../General/Hyphenations}
+\input{../General/tikzdefs}
+
+\input{../General/acronyms}
+\input{../General/Hyphenations}%
+
+%\bibliography{Jetson} 
+%\addbibresource{MyLiterature}
+\addbibresource{MyLitManoj.bib}
+
+
+
+\begin{document}
+
+
+  \input{../Contents/PythonPackages/Titlepage}
+
+  \tableofcontents
+  \newpage
+
+  \listoffigures
+  \newpage
+
+  \InputLanguage{../Contents/General/}{Acronymlist}
+  \newpage
+
+
+
+  
+\part{Python Packages}
+
+%  \InputLanguage{../Contents/General/}{PackageExample}
+  
+%  \InputLanguage{../Contents/General/}{Matplotlib}
+
+%  \InputLanguage{../Contents/General/}{Flask}
+
+%  \InputLanguage{../Contents/General/}{OpenCV}
+  
+  %\InputLanguage{../Contents/General/}{Pendulum}
+
+%  \InputLanguage{../Contents/General/}{logging}
+  
+%  \input{../Contents/General/PixelLib}
+
+  %\InputLanguage{../Contents/General/}{EasyOCR}
+
+%  \input{../Contents/General/PythonBarcode}
+
+%  \input{../Contents/General/Pyzbar}
+
+%  \input{../Contents/General/Zbarlight}
+  
+%  \InputLanguage{../Contents/General/}{PdfhandlingPython}
+  
+%  \InputLanguage{../Contents/General/}{pdf2txt}
+
+%  \InputLanguage{../Contents/General/}{PDFminer}
+
+%  \input{../Contents/General/PyTesseract}
+
+%  \input{../Contents/General/Tesseract}
+
+%\input{../Contents/General/TesseractClaude}
+
+%\input{../Contents/General/Tescka}
+
+\input{../Contents/General/TesseractOCR}
+
+%  \input{../Contents/General/Slate}
+
+%  \input{../Contents/General/PyMuPDF}
+
+%  \input{../Contents/General/PDFMinerSix}
+
+%  \input{../Contents/General/pdfplumber}
+
+%  \input{../Contents/General/LineaPy}
+
+%  \InputLanguage{../Contents/General/}{BeautifulSoup}
+  
+%  \input{../Contents/General/}{NLTK}
+  
+%  \InputLanguage{../Contents/General/}{Pipenv}
+
+%  \InputLanguage{../Contents/General/}{PyTest}
+
+%  \InputLanguage{../Contents/General/}{Ramp}
+
+%  \InputLanguage{../Contents/General/}{ble2mqtt}
+  
+%  \InputLanguage{../Contents/General/}{mqtt}
+  
+
+
+%  \InputLanguage{../Contents/General/}{Tabulapy}
+
+
+  
+%  \InputLanguage{../Contents/General/}{Bob}
+  
+%  \InputLanguage{../Contents/General/}{urllib}
+  
+
+%  \InputLanguage{../Contents/General/}{Librosa}
+
+
+%  \InputLanguage{../Contents/General/}{PyQt}
+
+%  \InputLanguage{../Contents/General/}{Fpdf}
+
+  
+  
+%  \InputLanguage{../Contents/General/}{Camelot}
+  
+%  \InputLanguage{../Contents/General/}{PyPDFium}
+
+%  \input{../Contents/General/PythonSnippets}
+
+%  \input{../Contents/General/FaceDetection}
+
+
+
+
+%\addcontentsline{toc}{chapter}{Literaturverzeichnis}
+
+\printbibliography[
+heading=bibintoc,
+title={Literaturverzeichnis}
+]
+
+
+\newpage
+
+\addcontentsline{toc}{chapter}{Index}
+\printindex
+
+%\part{Anhang}
+
+
+%%\input{todo}
+%
+
+
+\end{document}

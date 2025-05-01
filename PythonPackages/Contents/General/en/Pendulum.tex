@@ -1,0 +1,247 @@
+%%%
+%
+% $Autor: Sudeshna Nanda $
+% $Datum: 2025-01-28 $
+% $Dateiname: 
+% $Pfad: PythonPackages/Contents/General/Pendulum $
+% $Version: 4620 $
+%
+% !TeX spellcheck = GB
+% !TeX program = pdflatex
+% !TeX encoding = utf8
+%
+%%%
+
+
+\chapter{Package \PYTHON{Pendulum}}
+
+\index{Example}
+
+\section{Introduction}
+
+
+Pendulum is a Python package to ease datetimes manipulation.
+
+It provides classes that are drop-in replacements for the native ones (they inherit from them).
+
+Special care has been taken to ensure timezones are handled correctly, and are based on the underlying tzinfo implementation. For example, all comparisons are done in UTC or in the timezone of the datetime being used.
+
+\index{Example!Introduction}
+\begin{lstlisting}[language=python, caption={Calculating Time Difference Between Toronto and Vancouver}, label={lst:pendulum}, style=pythonstyle ]
+	>>> import pendulum
+	
+	>>> dt_toronto = pendulum.datetime(2012, 1, 1, tz='America/Toronto')
+	>>> dt_vancouver = pendulum.datetime(2012, 1, 1, tz='America/Vancouver')
+	
+	>>> print(dt_vancouver.diff(dt_toronto).in_hours())
+	3
+\end{lstlisting}
+
+The default timezone, except when using the now() method, will always be UTC.
+
+Pendulum extends the capabilities of Python’s datetime module by introducing timezone-aware datetimes, duration calculations, and formatting utilities. It ensures precise and consistent datetime operations, making it a robust choice for projects requiring sophisticated date/time handling.
+
+
+\section{Description}
+
+Pendulum improves upon Python’s standard datetime module with enhanced functionality and ease of use. Key features include:
+
+\begin{itemize}
+	\item Improved timedelta class with more intuitive methods and properties.
+	\item Elimination of naive datetimes by ensuring all instances are timezone-aware.
+	\item Default timezone set to UTC for consistency and ease of use.
+	\item Fully compatible as a drop-in replacement for the standard datetime class.
+	\item Seamless integration—replace datetime instances with Pendulum DateTime instances in your code without changes.
+	\item Supports Python 2.7 and 3.4+.
+\end{itemize}
+
+Pendulum’s robust API ensures precise and consistent datetime operations, making it ideal for applications requiring advanced date and time management.
+
+\index{Example!Description}
+Example usage:
+\begin{lstlisting}[language=Python, caption={Example of Timezone and DateTime Operations with Pendulum}, label={code:pendulum-timezone-datetime}, style=pythonstyle]
+	import pendulum
+	
+	now_in_paris = pendulum.now('Europe/Paris')
+	now_in_paris
+	# '2016-07-04T00:49:58.502116+02:00'
+	
+	# Seamless timezone switching
+		now_in_paris.in_timezone('UTC')
+	# '2016-07-03T22:49:58.502116+00:00'
+	
+	# Date calculations
+		tomorrow = pendulum.now().add(days=1)
+		last_week = pendulum.now().subtract(weeks=1)
+	
+	# Human-friendly time differences
+		past = pendulum.now().subtract(minutes=2)
+		past.diff_for_humans()
+	# '2 minutes ago'
+	
+	# More time difference calculations
+		delta = past - last_week
+		delta.hours
+	# 23
+		delta.in_words(locale='en')
+	# '6 days 23 hours 58 minutes'
+	
+	# Proper handling of datetime normalization
+		pendulum.datetime(2013, 3, 31, 2, 30, tz='Europe/Paris')
+	# '2013-03-31T03:30:00+02:00' 
+	# 2:30 does not exist (Skipped time)
+	
+	# Proper handling of DST transitions
+		just_before = pendulum.datetime(2013, 3, 31, 1, 59, 59, 999999, tz='Europe/Paris')
+	# '2013-03-31T01:59:59.999999+01:00'
+		just_before.add(microseconds=1)
+	# '2013-03-31T03:00:00+02:00'
+\end{lstlisting}
+
+Pendulum’s robust API ensures precise and consistent datetime operations, making it ideal for applications requiring advanced date and time management.
+
+\section{Installation}
+
+Like any other Python package Pendulum can be installed using the pip install pendulum command. If you encounter any issues during installation, try installing a specific version. You can use pip or poetry for installation:
+\begin{lstlisting}[language=Bash, caption={Installing Pendulum via pip and poetry}, label={code:install-pendulum}, style=bashstyle]
+	# Install the latest version using pip
+	$ pip install pendulum
+	
+	# If you encounter issues, install a specific version
+	$ pip install pendulum==2.0.5
+	
+	# Using poetry
+	$ poetry add pendulum
+\end{lstlisting}
+
+\index{Example!Installation}
+
+\SHELL{pip packageExample}
+
+\section{Example - Manual}
+
+Pendulum provides a wide range of functionalities to simplify datetime operations. Below are some examples showcasing its capabilities:
+
+\subsection{Creating and Manipulating Datetimes}
+\begin{lstlisting}[language=Python, caption={Creating and Manipulating Datetimes with Pendulum}, label={code:pendulum-datetime-manipulation}, style=pythonstyle]
+	import pendulum
+	
+	# Create a datetime with a specific timezone
+	dt = pendulum.datetime(2023, 1, 1, 12, 0, 0, tz='Asia/Tokyo')
+	print(dt)
+	# '2023-01-01T12:00:00+09:00'
+	
+	# Add and subtract time
+	tomorrow = dt.add(days=1)
+	print(tomorrow)
+	# '2023-01-02T12:00:00+09:00'
+	
+	last_week = dt.subtract(weeks=1)
+	print(last_week)
+	# '2022-12-25T12:00:00+09:00'
+	
+	# Format datetime as a string
+	print(dt.to_formatted_date_string())
+	# 'Jan 1, 2023'
+\end{lstlisting}
+
+\subsection{Timezone Handling}
+
+\begin{lstlisting}[language=Python, caption={Working with Current Time and Timezones in Pendulum}, label={code:pendulum-current-time}, style=pythonstyle]
+	import pendulum
+	
+	# Get the current time
+	now = pendulum.now()
+	print(now)
+	# '2023-01-01T03:00:00+00:00'
+	
+	# Convert to a different timezone
+	in_tokyo = now.in_timezone('Asia/Tokyo')
+	print(in_tokyo)
+	# '2023-01-01T12:00:00+09:00'
+	
+	# Get UTC offset
+	print(in_tokyo.utcoffset())
+	# 9:00:00
+\end{lstlisting}
+
+
+\subsection{Human-Readable Differences}
+
+\begin{lstlisting}[language=Python, caption={Human-Readable Time Differences with Pendulum}, label={code:pendulum-human-readable}, style=pythonstyle]
+	import pendulum
+	
+	# Subtract time to get a past datetime
+	past = pendulum.now().subtract(minutes=5)
+	print(past.diff_for_humans())
+	# '5 minutes ago'
+	
+	# Add time to get a future datetime
+	future = pendulum.now().add(hours=2)
+	print(future.diff_for_humans())
+	# 'in 2 hours'
+\end{lstlisting}
+
+\subsection{Duration and Interval Calculations}
+
+
+{
+\captionof{code}{Calculating Durations and Iterating Through Periods with Pendulum}
+\lstinputlisting[language=Python]{../Code/General/Pendulum/Pendulum.py}		
+}
+
+
+These examples demonstrate Pendulum's power and simplicity for managing datetime operations.
+
+\section{Example}
+
+\section{Example - Version}
+
+Pendulum has seen several major releases with improvements and bug fixes:
+
+\begin{itemize}
+	\item \textbf{Pendulum 3.0.0} (Dec 16, 2023): Latest major release with improved features and bug fixes.
+	\item \textbf{Pendulum 2.1.x} (2020): Several minor releases focusing on enhancements and bug fixes.
+	\item \textbf{Pendulum 2.0.0} (May 8, 2018): Major version introducing significant improvements and compatibility with Python 3.4+.
+	\item \textbf{Pendulum 1.x} (2017-2018): Series of releases with incremental updates and new features.
+	\item \textbf{Pendulum 0.x} (2016): Initial versions, introducing basic functionality and timezone handling.
+\end{itemize}
+
+\section{Example - Files}
+
+\FILE{PackageExample.py}
+
+
+The typical file structure for a Python project using the \texttt{pendulum} package is as follows:
+
+\begin{itemize}
+  \item[]	\FILE{my\_project}
+    \begin{itemize}
+      \item [-] \FILE{venv}    \quad \# Virtual environment (optional)
+      \item [-] \FILE{main.py} \quad \# Main Python script using pendulum
+      \item [-] \FILE{requirements.txt}    \# List of dependencies
+    \end{itemize}	
+\end{itemize}	
+
+%\begin{verbatim}
+%\end{verbatim}
+
+\texttt{main.py} contains the Python code that utilizes the \texttt{pendulum} library, while \texttt{requirements.txt} lists the dependencies, including \texttt{pendulum}, required for the project.
+
+\section{Further Reading}
+
+\nocite{Abadi:2016}
+\href{https://pendulum.eustace.io/}{Pendulum by Eustace}
+\href{https://www.geeksforgeeks.org/python-pendulum-module/}{Python Pendulum Module on GeeksforGeeks}
+	% Überschrift ein Level unter `refsection=chapter`, also \section*:
+   \printbibliography[heading=subbibliography, segment=\therefsegment]
+
+
+
+
+
+
+
+
+
+

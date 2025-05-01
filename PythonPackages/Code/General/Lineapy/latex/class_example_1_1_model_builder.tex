@@ -1,0 +1,71 @@
+\doxysection{Example.\+Model\+Builder Class Reference}
+\hypertarget{class_example_1_1_model_builder}{}\label{class_example_1_1_model_builder}\index{Example.ModelBuilder@{Example.ModelBuilder}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_example_1_1_model_builder_a189de1c52ecfdb562994fa692cc38540}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, \mbox{\hyperlink{class_example_1_1_model_builder_a06c359cd92502438297bd5bc7b50f518}{norm\+\_\+layer}})
+\item 
+\mbox{\hyperlink{class_example_1_1_model_builder_ab480436cb9f3dd47314bd93f5836fdbc}{build\+\_\+linear\+\_\+model}} (self)
+\item 
+\mbox{\hyperlink{class_example_1_1_model_builder_a298fd4402744d622d0c4b28cd2e61a91}{build\+\_\+dnn\+\_\+model}} (self)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_example_1_1_model_builder_a06c359cd92502438297bd5bc7b50f518}{norm\+\_\+layer}} = norm\+\_\+layer
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Class to build and compile TensorFlow models.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_example_1_1_model_builder_a189de1c52ecfdb562994fa692cc38540}\index{Example.ModelBuilder@{Example.ModelBuilder}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!Example.ModelBuilder@{Example.ModelBuilder}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily \label{class_example_1_1_model_builder_a189de1c52ecfdb562994fa692cc38540} 
+Example.\+Model\+Builder.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{norm\+\_\+layer}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Initializes the ModelBuilder with a normalization layer.
+
+@param norm_layer: tf.keras.layers.Layer The normalization layer to use in the model.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_example_1_1_model_builder_a298fd4402744d622d0c4b28cd2e61a91}\index{Example.ModelBuilder@{Example.ModelBuilder}!build\_dnn\_model@{build\_dnn\_model}}
+\index{build\_dnn\_model@{build\_dnn\_model}!Example.ModelBuilder@{Example.ModelBuilder}}
+\doxysubsubsection{\texorpdfstring{build\_dnn\_model()}{build\_dnn\_model()}}
+{\footnotesize\ttfamily \label{class_example_1_1_model_builder_a298fd4402744d622d0c4b28cd2e61a91} 
+Example.\+Model\+Builder.\+build\+\_\+dnn\+\_\+model (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Builds a deep neural network (DNN) model.
+
+@return: tf.keras.Sequential The compiled DNN model.
+\end{DoxyVerb}
+ \Hypertarget{class_example_1_1_model_builder_ab480436cb9f3dd47314bd93f5836fdbc}\index{Example.ModelBuilder@{Example.ModelBuilder}!build\_linear\_model@{build\_linear\_model}}
+\index{build\_linear\_model@{build\_linear\_model}!Example.ModelBuilder@{Example.ModelBuilder}}
+\doxysubsubsection{\texorpdfstring{build\_linear\_model()}{build\_linear\_model()}}
+{\footnotesize\ttfamily \label{class_example_1_1_model_builder_ab480436cb9f3dd47314bd93f5836fdbc} 
+Example.\+Model\+Builder.\+build\+\_\+linear\+\_\+model (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Builds a simple linear regression model.
+
+@return: tf.keras.Sequential The compiled linear regression model.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_example_1_1_model_builder_a06c359cd92502438297bd5bc7b50f518}\index{Example.ModelBuilder@{Example.ModelBuilder}!norm\_layer@{norm\_layer}}
+\index{norm\_layer@{norm\_layer}!Example.ModelBuilder@{Example.ModelBuilder}}
+\doxysubsubsection{\texorpdfstring{norm\_layer}{norm\_layer}}
+{\footnotesize\ttfamily \label{class_example_1_1_model_builder_a06c359cd92502438297bd5bc7b50f518} 
+Example.\+Model\+Builder.\+norm\+\_\+layer = norm\+\_\+layer}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_example_8py}{Example.\+py}}\end{DoxyCompactItemize}

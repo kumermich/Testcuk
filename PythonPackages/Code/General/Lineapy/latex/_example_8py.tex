@@ -1,0 +1,52 @@
+\doxysection{Example.\+py File Reference}
+\hypertarget{_example_8py}{}\label{_example_8py}\index{Example.py@{Example.py}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_example_1_1_data_preprocessing}{Example.\+Data\+Preprocessing}}
+\item 
+class \mbox{\hyperlink{class_example_1_1_model_normalization}{Example.\+Model\+Normalization}}
+\item 
+class \mbox{\hyperlink{class_example_1_1_model_builder}{Example.\+Model\+Builder}}
+\item 
+class \mbox{\hyperlink{class_example_1_1_training_pipeline}{Example.\+Training\+Pipeline}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespace_example}{Example}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespace_example_a3419f9499a6432f7338412bd4b475c30}{Example.\+plot\+\_\+loss}} (history)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+str \mbox{\hyperlink{namespace_example_a619c8bf96cfb48bb22c809b614d903a8}{Example.\+url}} = \textquotesingle{}http\+://archive.\+ics.\+uci.\+edu/ml/machine-\/learning-\/databases/auto-\/mpg/auto-\/mpg.\+data\textquotesingle{}
+\item 
+list \mbox{\hyperlink{namespace_example_a8acb1c7095e69dec1e7f31b21164b9dc}{Example.\+column\+\_\+names}} = \mbox{[}\textquotesingle{}MPG\textquotesingle{}, \textquotesingle{}Cylinders\textquotesingle{}, \textquotesingle{}Displacement\textquotesingle{}, \textquotesingle{}Horsepower\textquotesingle{}, \textquotesingle{}Weight\textquotesingle{}, \textquotesingle{}Acceleration\textquotesingle{}, \textquotesingle{}Model Year\textquotesingle{}, \textquotesingle{}Origin\textquotesingle{}\mbox{]}
+\item 
+\mbox{\hyperlink{namespace_example_a7c612255fe6ccb32fb8d690dfed705df}{Example.\+data\+\_\+processor}} = \mbox{\hyperlink{class_example_1_1_data_preprocessing}{Data\+Preprocessing}}(\mbox{\hyperlink{namespace_example_a619c8bf96cfb48bb22c809b614d903a8}{url}}, \mbox{\hyperlink{namespace_example_a8acb1c7095e69dec1e7f31b21164b9dc}{column\+\_\+names}})
+\item 
+\mbox{\hyperlink{namespace_example_a03edc5b15258b621802154fa91d2b258}{Example.\+dataset}} = data\+\_\+processor.\+dataset
+\item 
+\mbox{\hyperlink{namespace_example_a792ea91cabb30f382f0d6edf0a13b1ab}{Example.\+train\+\_\+dataset}}
+\item 
+\mbox{\hyperlink{namespace_example_aaad2493f9b1cb8d860fdbf178943eaa3}{Example.\+test\+\_\+dataset}}
+\item 
+\mbox{\hyperlink{namespace_example_ad823c257fc30cabf89d0a9d1e538d414}{Example.\+train\+\_\+features}} = \mbox{\hyperlink{namespace_example_a792ea91cabb30f382f0d6edf0a13b1ab}{train\+\_\+dataset}}\mbox{[}\mbox{[}\textquotesingle{}Cylinders\textquotesingle{}, \textquotesingle{}Displacement\textquotesingle{}, \textquotesingle{}Horsepower\textquotesingle{}, \textquotesingle{}Weight\textquotesingle{}\mbox{]}\mbox{]}.values
+\item 
+\mbox{\hyperlink{namespace_example_a3944ba2bb5d57965cad79c0384b443d3}{Example.\+train\+\_\+labels}} = \mbox{\hyperlink{namespace_example_a792ea91cabb30f382f0d6edf0a13b1ab}{train\+\_\+dataset}}\mbox{[}\textquotesingle{}MPG\textquotesingle{}\mbox{]}.values
+\item 
+\mbox{\hyperlink{namespace_example_a6f5d5125c8af32725503fcc4b522c9bb}{Example.\+test\+\_\+features}} = \mbox{\hyperlink{namespace_example_aaad2493f9b1cb8d860fdbf178943eaa3}{test\+\_\+dataset}}\mbox{[}\mbox{[}\textquotesingle{}Cylinders\textquotesingle{}, \textquotesingle{}Displacement\textquotesingle{}, \textquotesingle{}Horsepower\textquotesingle{}, \textquotesingle{}Weight\textquotesingle{}\mbox{]}\mbox{]}.values
+\item 
+\mbox{\hyperlink{namespace_example_a16d9ee7fe0404f7bd7ff65d616c08b79}{Example.\+test\+\_\+labels}} = \mbox{\hyperlink{namespace_example_aaad2493f9b1cb8d860fdbf178943eaa3}{test\+\_\+dataset}}\mbox{[}\textquotesingle{}MPG\textquotesingle{}\mbox{]}.values
+\item 
+\mbox{\hyperlink{namespace_example_a8c4156c8976d627b5efd9f91aac39066}{Example.\+normalizer}} = \mbox{\hyperlink{class_example_1_1_model_normalization}{Model\+Normalization}}(\mbox{\hyperlink{namespace_example_ad823c257fc30cabf89d0a9d1e538d414}{train\+\_\+features}})
+\item 
+\mbox{\hyperlink{namespace_example_a7ab5e56f02f0729b5fafd2d2301c231a}{Example.\+pipeline}} = \mbox{\hyperlink{class_example_1_1_training_pipeline}{Training\+Pipeline}}(\mbox{\hyperlink{namespace_example_ad823c257fc30cabf89d0a9d1e538d414}{train\+\_\+features}}, \mbox{\hyperlink{namespace_example_a3944ba2bb5d57965cad79c0384b443d3}{train\+\_\+labels}}, \mbox{\hyperlink{namespace_example_a6f5d5125c8af32725503fcc4b522c9bb}{test\+\_\+features}}, \mbox{\hyperlink{namespace_example_a16d9ee7fe0404f7bd7ff65d616c08b79}{test\+\_\+labels}}, \mbox{\hyperlink{namespace_example_a8c4156c8976d627b5efd9f91aac39066}{normalizer}})
+\item 
+\mbox{\hyperlink{namespace_example_aafe3993076e478f523351ad8ae705639}{Example.\+test\+\_\+results}} = pipeline.\+run\+\_\+pipeline(\textquotesingle{}dnn\textquotesingle{})
+\end{DoxyCompactItemize}

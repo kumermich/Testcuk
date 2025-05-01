@@ -1,0 +1,68 @@
+\doxysection{document-\/process-\/pipeline.py}
+\hypertarget{document-process-pipeline_8py_source}{}\label{document-process-pipeline_8py_source}\mbox{\hyperlink{document-process-pipeline_8py}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{document-process-pipeline_8py_source_l00001}\mbox{\hyperlink{namespacedocument-process-pipeline}{00001}}\ \textcolor{keyword}{import}\ pytesseract}
+\DoxyCodeLine{\Hypertarget{document-process-pipeline_8py_source_l00002}00002\ \textcolor{keyword}{from}\ PIL\ \textcolor{keyword}{import}\ Image}
+\DoxyCodeLine{\Hypertarget{document-process-pipeline_8py_source_l00003}00003\ \textcolor{keyword}{import}\ cv2}
+\DoxyCodeLine{\Hypertarget{document-process-pipeline_8py_source_l00004}00004\ \textcolor{keyword}{import}\ numpy\ \textcolor{keyword}{as}\ np}
+\DoxyCodeLine{\Hypertarget{document-process-pipeline_8py_source_l00005}00005\ \textcolor{keyword}{import}\ logging}
+\DoxyCodeLine{\Hypertarget{document-process-pipeline_8py_source_l00006}00006\ \textcolor{keyword}{from}\ pathlib\ \textcolor{keyword}{import}\ Path}
+\DoxyCodeLine{\Hypertarget{document-process-pipeline_8py_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{document-process-pipeline_8py_source_l00008}00008\ \textcolor{keyword}{class\ }DocumentProcessor:}
+\DoxyCodeLine{\Hypertarget{document-process-pipeline_8py_source_l00009}00009\ \ \ \ \ \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{document-process-pipeline_8py_source_l00010}00010\ \textcolor{stringliteral}{\ \ \ \ Handles\ end-\/to-\/end\ document\ processing\ and\ text\ extraction}}
+\DoxyCodeLine{\Hypertarget{document-process-pipeline_8py_source_l00011}00011\ \textcolor{stringliteral}{\ \ \ \ "{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{document-process-pipeline_8py_source_l00012}00012\ \ \ \ \ \textcolor{keyword}{def\ }\_\_init\_\_(self,\ tesseract\_path=None):}
+\DoxyCodeLine{\Hypertarget{document-process-pipeline_8py_source_l00013}00013\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ tesseract\_path:}
+\DoxyCodeLine{\Hypertarget{document-process-pipeline_8py_source_l00014}00014\ \ \ \ \ \ \ \ \ \ \ \ \ pytesseract.pytesseract.tesseract\_cmd\ =\ tesseract\_path}
+\DoxyCodeLine{\Hypertarget{document-process-pipeline_8py_source_l00015}00015\ \ \ \ \ \ \ \ \ self.logger\ =\ logging.getLogger(\_\_name\_\_)}
+\DoxyCodeLine{\Hypertarget{document-process-pipeline_8py_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{document-process-pipeline_8py_source_l00017}00017\ \ \ \ \ \textcolor{keyword}{def\ }preprocess\_image(self,\ image):}
+\DoxyCodeLine{\Hypertarget{document-process-pipeline_8py_source_l00018}00018\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{document-process-pipeline_8py_source_l00019}00019\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ Applies\ preprocessing\ steps\ to\ improve\ OCR\ accuracy}}
+\DoxyCodeLine{\Hypertarget{document-process-pipeline_8py_source_l00020}00020\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ :param\ image:\ OpenCV\ image\ array}}
+\DoxyCodeLine{\Hypertarget{document-process-pipeline_8py_source_l00021}00021\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ :return:\ Preprocessed\ image\ array}}
+\DoxyCodeLine{\Hypertarget{document-process-pipeline_8py_source_l00022}00022\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ "{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{document-process-pipeline_8py_source_l00023}00023\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Convert\ to\ grayscale}}
+\DoxyCodeLine{\Hypertarget{document-process-pipeline_8py_source_l00024}00024\ \ \ \ \ \ \ \ \ gray\ =\ cv2.cvtColor(image,\ cv2.COLOR\_BGR2GRAY)}
+\DoxyCodeLine{\Hypertarget{document-process-pipeline_8py_source_l00025}00025\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{document-process-pipeline_8py_source_l00026}00026\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Apply\ thresholding}}
+\DoxyCodeLine{\Hypertarget{document-process-pipeline_8py_source_l00027}00027\ \ \ \ \ \ \ \ \ thresh\ =\ cv2.threshold(gray,\ 0,\ 255,\ cv2.THRESH\_BINARY\ +\ cv2.THRESH\_OTSU)[1]}
+\DoxyCodeLine{\Hypertarget{document-process-pipeline_8py_source_l00028}00028\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{document-process-pipeline_8py_source_l00029}00029\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Denoise}}
+\DoxyCodeLine{\Hypertarget{document-process-pipeline_8py_source_l00030}00030\ \ \ \ \ \ \ \ \ denoised\ =\ cv2.fastNlMeansDenoising(thresh)}
+\DoxyCodeLine{\Hypertarget{document-process-pipeline_8py_source_l00031}00031\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{document-process-pipeline_8py_source_l00032}00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ denoised}
+\DoxyCodeLine{\Hypertarget{document-process-pipeline_8py_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{document-process-pipeline_8py_source_l00034}00034\ \ \ \ \ \textcolor{keyword}{def\ }extract\_text\_with\_layout(self,\ image\_path):}
+\DoxyCodeLine{\Hypertarget{document-process-pipeline_8py_source_l00035}00035\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{document-process-pipeline_8py_source_l00036}00036\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ Extracts\ text\ while\ preserving\ document\ layout}}
+\DoxyCodeLine{\Hypertarget{document-process-pipeline_8py_source_l00037}00037\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ :param\ image\_path:\ Path\ to\ the\ input\ image}}
+\DoxyCodeLine{\Hypertarget{document-process-pipeline_8py_source_l00038}00038\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ :return:\ Dictionary\ containing\ text\ and\ layout\ information}}
+\DoxyCodeLine{\Hypertarget{document-process-pipeline_8py_source_l00039}00039\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ "{}"{}"{}}}
+\DoxyCodeLine{\Hypertarget{document-process-pipeline_8py_source_l00040}00040\ \ \ \ \ \ \ \ \ image\ =\ cv2.imread(str(image\_path))}
+\DoxyCodeLine{\Hypertarget{document-process-pipeline_8py_source_l00041}00041\ \ \ \ \ \ \ \ \ preprocessed\ =\ self.preprocess\_image(image)}
+\DoxyCodeLine{\Hypertarget{document-process-pipeline_8py_source_l00042}00042\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{document-process-pipeline_8py_source_l00043}00043\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Get\ detailed\ page\ analysis}}
+\DoxyCodeLine{\Hypertarget{document-process-pipeline_8py_source_l00044}00044\ \ \ \ \ \ \ \ \ data\ =\ pytesseract.image\_to\_data(preprocessed,\ output\_type=pytesseract.Output.DICT)}
+\DoxyCodeLine{\Hypertarget{document-process-pipeline_8py_source_l00045}00045\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{document-process-pipeline_8py_source_l00046}00046\ \ \ \ \ \ \ \ \ \textcolor{comment}{\#\ Extract\ text\ with\ positioning}}
+\DoxyCodeLine{\Hypertarget{document-process-pipeline_8py_source_l00047}00047\ \ \ \ \ \ \ \ \ layout\_info\ =\ []}
+\DoxyCodeLine{\Hypertarget{document-process-pipeline_8py_source_l00048}00048\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ i\ \textcolor{keywordflow}{in}\ range(len(data[\textcolor{stringliteral}{'text'}])):}
+\DoxyCodeLine{\Hypertarget{document-process-pipeline_8py_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ int(float(data[\textcolor{stringliteral}{'conf'}][i]))\ >\ 60:}
+\DoxyCodeLine{\Hypertarget{document-process-pipeline_8py_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ layout\_info.append(\{}
+\DoxyCodeLine{\Hypertarget{document-process-pipeline_8py_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'text'}:\ data[\textcolor{stringliteral}{'text'}][i],}
+\DoxyCodeLine{\Hypertarget{document-process-pipeline_8py_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'confidence'}:\ data[\textcolor{stringliteral}{'conf'}][i],}
+\DoxyCodeLine{\Hypertarget{document-process-pipeline_8py_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'bbox'}:\ (}
+\DoxyCodeLine{\Hypertarget{document-process-pipeline_8py_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data[\textcolor{stringliteral}{'left'}][i],}
+\DoxyCodeLine{\Hypertarget{document-process-pipeline_8py_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data[\textcolor{stringliteral}{'top'}][i],}
+\DoxyCodeLine{\Hypertarget{document-process-pipeline_8py_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data[\textcolor{stringliteral}{'width'}][i],}
+\DoxyCodeLine{\Hypertarget{document-process-pipeline_8py_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ data[\textcolor{stringliteral}{'height'}][i]}
+\DoxyCodeLine{\Hypertarget{document-process-pipeline_8py_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ),}
+\DoxyCodeLine{\Hypertarget{document-process-pipeline_8py_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'block\_num'}:\ data[\textcolor{stringliteral}{'block\_num'}][i],}
+\DoxyCodeLine{\Hypertarget{document-process-pipeline_8py_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{'line\_num'}:\ data[\textcolor{stringliteral}{'line\_num'}][i]}
+\DoxyCodeLine{\Hypertarget{document-process-pipeline_8py_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \})}
+\DoxyCodeLine{\Hypertarget{document-process-pipeline_8py_source_l00062}00062\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{document-process-pipeline_8py_source_l00063}00063\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ layout\_info}
+
+\end{DoxyCode}

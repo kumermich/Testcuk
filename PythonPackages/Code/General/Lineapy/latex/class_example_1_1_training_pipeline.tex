@@ -1,0 +1,127 @@
+\doxysection{Example.\+Training\+Pipeline Class Reference}
+\hypertarget{class_example_1_1_training_pipeline}{}\label{class_example_1_1_training_pipeline}\index{Example.TrainingPipeline@{Example.TrainingPipeline}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_example_1_1_training_pipeline_ae9e8873ca4776b034c389aa001443c6c}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, \mbox{\hyperlink{class_example_1_1_training_pipeline_acd30ba23825f7bf83d808e3a7f79f90d}{train\+\_\+features}}, \mbox{\hyperlink{class_example_1_1_training_pipeline_a0d7ad6da802459760ab7a393f9bd0239}{train\+\_\+labels}}, \mbox{\hyperlink{class_example_1_1_training_pipeline_a2e684ba0de4cc2e7ea6fb1d79ecebb61}{test\+\_\+features}}, \mbox{\hyperlink{class_example_1_1_training_pipeline_a7c5e24fb64ca46b5f5e3b0cf683078b3}{test\+\_\+labels}}, \mbox{\hyperlink{class_example_1_1_training_pipeline_a5e02dd7df9bf4b6108c1102248b1d334}{normalizer}})
+\item 
+\mbox{\hyperlink{class_example_1_1_training_pipeline_ad8152bedcf25ca819e01576a49ad2086}{save\+\_\+artifacts}} (self)
+\item 
+\mbox{\hyperlink{class_example_1_1_training_pipeline_a67bcdab9ad4c5820647387f29092890d}{get\+\_\+model\+\_\+code}} (self)
+\item 
+\mbox{\hyperlink{class_example_1_1_training_pipeline_a11b4ef93c76026170a6c4c9c83390959}{run\+\_\+pipeline}} (self, model\+\_\+type=\textquotesingle{}linear\textquotesingle{})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_example_1_1_training_pipeline_acd30ba23825f7bf83d808e3a7f79f90d}{train\+\_\+features}} = train\+\_\+features
+\item 
+\mbox{\hyperlink{class_example_1_1_training_pipeline_a0d7ad6da802459760ab7a393f9bd0239}{train\+\_\+labels}} = train\+\_\+labels
+\item 
+\mbox{\hyperlink{class_example_1_1_training_pipeline_a2e684ba0de4cc2e7ea6fb1d79ecebb61}{test\+\_\+features}} = test\+\_\+features
+\item 
+\mbox{\hyperlink{class_example_1_1_training_pipeline_a7c5e24fb64ca46b5f5e3b0cf683078b3}{test\+\_\+labels}} = test\+\_\+labels
+\item 
+\mbox{\hyperlink{class_example_1_1_training_pipeline_a5e02dd7df9bf4b6108c1102248b1d334}{normalizer}} = normalizer
+\item 
+\mbox{\hyperlink{class_example_1_1_training_pipeline_afca7ff3b3176d6be29a202ef8244a9a4}{model\+\_\+artifact}} = None
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Class to handle the training pipeline and save artifacts using lineapy.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_example_1_1_training_pipeline_ae9e8873ca4776b034c389aa001443c6c}\index{Example.TrainingPipeline@{Example.TrainingPipeline}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!Example.TrainingPipeline@{Example.TrainingPipeline}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily \label{class_example_1_1_training_pipeline_ae9e8873ca4776b034c389aa001443c6c} 
+Example.\+Training\+Pipeline.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{train\+\_\+features}{, }\item[{}]{train\+\_\+labels}{, }\item[{}]{test\+\_\+features}{, }\item[{}]{test\+\_\+labels}{, }\item[{}]{normalizer}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Initializes the training pipeline.
+
+@param train_features: np.ndarray The features used for training.
+@param train_labels: np.ndarray The labels corresponding to the training features.
+@param test_features: np.ndarray The features used for testing.
+@param test_labels: np.ndarray The labels corresponding to the test features.
+@param normalizer: tf.keras.layers.Normalization The normalization layer.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_example_1_1_training_pipeline_a67bcdab9ad4c5820647387f29092890d}\index{Example.TrainingPipeline@{Example.TrainingPipeline}!get\_model\_code@{get\_model\_code}}
+\index{get\_model\_code@{get\_model\_code}!Example.TrainingPipeline@{Example.TrainingPipeline}}
+\doxysubsubsection{\texorpdfstring{get\_model\_code()}{get\_model\_code()}}
+{\footnotesize\ttfamily \label{class_example_1_1_training_pipeline_a67bcdab9ad4c5820647387f29092890d} 
+Example.\+Training\+Pipeline.\+get\+\_\+model\+\_\+code (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Retrieves the code for the model artifact.
+
+@return: str The code representation of the model artifact.
+\end{DoxyVerb}
+ \Hypertarget{class_example_1_1_training_pipeline_a11b4ef93c76026170a6c4c9c83390959}\index{Example.TrainingPipeline@{Example.TrainingPipeline}!run\_pipeline@{run\_pipeline}}
+\index{run\_pipeline@{run\_pipeline}!Example.TrainingPipeline@{Example.TrainingPipeline}}
+\doxysubsubsection{\texorpdfstring{run\_pipeline()}{run\_pipeline()}}
+{\footnotesize\ttfamily \label{class_example_1_1_training_pipeline_a11b4ef93c76026170a6c4c9c83390959} 
+Example.\+Training\+Pipeline.\+run\+\_\+pipeline (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{model\+\_\+type}{ = {\ttfamily \textquotesingle{}linear\textquotesingle{}}}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Runs the pipeline with the specified model type.
+
+@param model_type: str The type of model to train ('linear' or 'dnn').
+
+@return: dict The results from the model evaluation.
+\end{DoxyVerb}
+ \Hypertarget{class_example_1_1_training_pipeline_ad8152bedcf25ca819e01576a49ad2086}\index{Example.TrainingPipeline@{Example.TrainingPipeline}!save\_artifacts@{save\_artifacts}}
+\index{save\_artifacts@{save\_artifacts}!Example.TrainingPipeline@{Example.TrainingPipeline}}
+\doxysubsubsection{\texorpdfstring{save\_artifacts()}{save\_artifacts()}}
+{\footnotesize\ttfamily \label{class_example_1_1_training_pipeline_ad8152bedcf25ca819e01576a49ad2086} 
+Example.\+Training\+Pipeline.\+save\+\_\+artifacts (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Saves training, test data, and labels as artifacts using lineapy.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_example_1_1_training_pipeline_afca7ff3b3176d6be29a202ef8244a9a4}\index{Example.TrainingPipeline@{Example.TrainingPipeline}!model\_artifact@{model\_artifact}}
+\index{model\_artifact@{model\_artifact}!Example.TrainingPipeline@{Example.TrainingPipeline}}
+\doxysubsubsection{\texorpdfstring{model\_artifact}{model\_artifact}}
+{\footnotesize\ttfamily \label{class_example_1_1_training_pipeline_afca7ff3b3176d6be29a202ef8244a9a4} 
+Example.\+Training\+Pipeline.\+model\+\_\+artifact = None}
+
+\Hypertarget{class_example_1_1_training_pipeline_a5e02dd7df9bf4b6108c1102248b1d334}\index{Example.TrainingPipeline@{Example.TrainingPipeline}!normalizer@{normalizer}}
+\index{normalizer@{normalizer}!Example.TrainingPipeline@{Example.TrainingPipeline}}
+\doxysubsubsection{\texorpdfstring{normalizer}{normalizer}}
+{\footnotesize\ttfamily \label{class_example_1_1_training_pipeline_a5e02dd7df9bf4b6108c1102248b1d334} 
+Example.\+Training\+Pipeline.\+normalizer = normalizer}
+
+\Hypertarget{class_example_1_1_training_pipeline_a2e684ba0de4cc2e7ea6fb1d79ecebb61}\index{Example.TrainingPipeline@{Example.TrainingPipeline}!test\_features@{test\_features}}
+\index{test\_features@{test\_features}!Example.TrainingPipeline@{Example.TrainingPipeline}}
+\doxysubsubsection{\texorpdfstring{test\_features}{test\_features}}
+{\footnotesize\ttfamily \label{class_example_1_1_training_pipeline_a2e684ba0de4cc2e7ea6fb1d79ecebb61} 
+Example.\+Training\+Pipeline.\+test\+\_\+features = test\+\_\+features}
+
+\Hypertarget{class_example_1_1_training_pipeline_a7c5e24fb64ca46b5f5e3b0cf683078b3}\index{Example.TrainingPipeline@{Example.TrainingPipeline}!test\_labels@{test\_labels}}
+\index{test\_labels@{test\_labels}!Example.TrainingPipeline@{Example.TrainingPipeline}}
+\doxysubsubsection{\texorpdfstring{test\_labels}{test\_labels}}
+{\footnotesize\ttfamily \label{class_example_1_1_training_pipeline_a7c5e24fb64ca46b5f5e3b0cf683078b3} 
+Example.\+Training\+Pipeline.\+test\+\_\+labels = test\+\_\+labels}
+
+\Hypertarget{class_example_1_1_training_pipeline_acd30ba23825f7bf83d808e3a7f79f90d}\index{Example.TrainingPipeline@{Example.TrainingPipeline}!train\_features@{train\_features}}
+\index{train\_features@{train\_features}!Example.TrainingPipeline@{Example.TrainingPipeline}}
+\doxysubsubsection{\texorpdfstring{train\_features}{train\_features}}
+{\footnotesize\ttfamily \label{class_example_1_1_training_pipeline_acd30ba23825f7bf83d808e3a7f79f90d} 
+Example.\+Training\+Pipeline.\+train\+\_\+features = train\+\_\+features}
+
+\Hypertarget{class_example_1_1_training_pipeline_a0d7ad6da802459760ab7a393f9bd0239}\index{Example.TrainingPipeline@{Example.TrainingPipeline}!train\_labels@{train\_labels}}
+\index{train\_labels@{train\_labels}!Example.TrainingPipeline@{Example.TrainingPipeline}}
+\doxysubsubsection{\texorpdfstring{train\_labels}{train\_labels}}
+{\footnotesize\ttfamily \label{class_example_1_1_training_pipeline_a0d7ad6da802459760ab7a393f9bd0239} 
+Example.\+Training\+Pipeline.\+train\+\_\+labels = train\+\_\+labels}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_example_8py}{Example.\+py}}\end{DoxyCompactItemize}
