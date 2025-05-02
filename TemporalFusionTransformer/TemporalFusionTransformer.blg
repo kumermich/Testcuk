@@ -1,0 +1,78 @@
+This is BibTeX, Version 0.99d (TeX Live 2024)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: TemporalFusionTransformer.aux
+The style file: biblatex.bst
+A level-1 auxiliary file: Slides/start.aux
+A level-1 auxiliary file: SlidesManoj/Introduction.aux
+A level-1 auxiliary file: Slides/Challenges.aux
+A level-1 auxiliary file: Slides/Solutions.aux
+A level-1 auxiliary file: Slides/Conclusion.aux
+A level-1 auxiliary file: Slides/refs.aux
+A level-1 auxiliary file: Slides/end.aux
+Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
+Reallocated global_strs (elt_size=200001) to 20 items from 10.
+Reallocated glb_str_end (elt_size=4) to 20 items from 10.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: TemporalFusionTransformer-blx.bib
+Database file #2: ./Documents/TFTTestBib.bib
+Warning--I didn't find a database entry for "Jittanon:2023"
+Warning--I didn't find a database entry for "Choi:2023"
+Warning--I didn't find a database entry for "Hu:2021"
+Warning--I didn't find a database entry for "Junankar:2023"
+Warning--I didn't find a database entry for "He:2023"
+Biblatex version: 3.20
+Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+You've used 4 entries,
+            6402 wiz_defined-function locations,
+            1246 strings with 10207 characters,
+and the built_in function-call counts, 38140 in all, are:
+= -- 3364
+> -- 431
+< -- 125
++ -- 1075
+- -- 153
+* -- 2755
+:= -- 4637
+add.period$ -- 0
+call.type$ -- 4
+change.case$ -- 86
+chr.to.int$ -- 42
+cite$ -- 6
+duplicate$ -- 3514
+empty$ -- 3305
+format.name$ -- 256
+if$ -- 7685
+int.to.chr$ -- 0
+int.to.str$ -- 8
+missing$ -- 0
+newline$ -- 157
+num.names$ -- 182
+pop$ -- 1243
+preamble$ -- 1
+purify$ -- 110
+quote$ -- 0
+skip$ -- 733
+stack$ -- 0
+substring$ -- 6767
+swap$ -- 588
+text.length$ -- 100
+text.prefix$ -- 3
+top$ -- 1
+type$ -- 124
+warning$ -- 0
+while$ -- 531
+width$ -- 0
+write$ -- 154
+(There were 5 warnings)

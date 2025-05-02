@@ -1,0 +1,161 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\datalist[entry]{nyt/global//global/global/global}
+  \entry{AIHorizonForecast:2023}{article}{}{}
+    \name{author}{1}{}{%
+      {{hash=A}{%
+         family={{AI Horizon Forecast}},
+         familyi={A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{A1}
+    \strng{fullhash}{A1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2023}
+    \field{labeldatesource}{}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \field{note}{Online blog article}
+    \field{title}{Temporal Fusion Transformer: Time Series Forecasting with
+  Interpretability}
+    \verb{url}
+    \verb https://aihorizonforecast.substack.com/p/temporal-fusion-transformer-
+    \verb time
+    \endverb
+    \field{journaltitle}{AI Horizon Forecast Substack}
+    \field{year}{2023}
+  \endentry
+
+  \entry{Chang:2022}{inproceedings}{}{}
+    \name{author}{7}{}{%
+      {{hash=CBK}{%
+         family={Chang},
+         familyi={C\bibinitperiod},
+         given={Bo-Kai},
+         giveni={B\bibinithyphendelim K\bibinitperiod},
+      }}%
+      {{hash=LTH}{%
+         family={Lee},
+         familyi={L\bibinitperiod},
+         given={Ting-Huan},
+         giveni={T\bibinithyphendelim H\bibinitperiod},
+      }}%
+      {{hash=CYC}{%
+         family={Chang},
+         familyi={C\bibinitperiod},
+         given={Yu-Chuan},
+         giveni={Y\bibinithyphendelim C\bibinitperiod},
+      }}%
+      {{hash=HWF}{%
+         family={Hsu},
+         familyi={H\bibinitperiod},
+         given={Wen-Fang},
+         giveni={W\bibinithyphendelim F\bibinitperiod},
+      }}%
+      {{hash=JIS}{%
+         family={Jan},
+         familyi={J\bibinitperiod},
+         given={I-Shiang},
+         giveni={I\bibinithyphendelim S\bibinitperiod},
+      }}%
+      {{hash=CSC}{%
+         family={Chen},
+         familyi={C\bibinitperiod},
+         given={Shyr-Chyr},
+         giveni={S\bibinithyphendelim C\bibinitperiod},
+      }}%
+      {{hash=HWJ}{%
+         family={Hsu},
+         familyi={H\bibinitperiod},
+         given={Wen-Jui},
+         giveni={W\bibinithyphendelim J\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Neural Information Processing Systems Foundation}%
+    }
+    \strng{namehash}{CBK+1}
+    \strng{fullhash}{CBKLTHCYCHWFJISCSCHWJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2022}
+    \field{labeldatesource}{}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \field{booktitle}{Advances in Neural Information Processing Systems
+  (NeurIPS)}
+    \field{note}{Conference presentation}
+    \field{title}{A Temporal Fusion Transformer for Long-term Explainable
+  Prediction of Emergency Department Overcrowding}
+    \verb{url}
+    \verb https://neurips.cc/virtual/2022/61783
+    \endverb
+    \field{year}{2022}
+  \endentry
+
+  \entry{Lim:2019}{article}{}{}
+    \name{author}{4}{}{%
+      {{hash=LB}{%
+         family={Lim},
+         familyi={L\bibinitperiod},
+         given={Bryan},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=ASÃ}{%
+         family={Arik},
+         familyi={A\bibinitperiod},
+         given={Sercan\bibnamedelima Ã–.},
+         giveni={S\bibinitperiod\bibinitdelim Ã\bibinitperiod},
+      }}%
+      {{hash=LN}{%
+         family={Loeff},
+         familyi={L\bibinitperiod},
+         given={Nicolas},
+         giveni={N\bibinitperiod},
+      }}%
+      {{hash=PT}{%
+         family={Pfister},
+         familyi={P\bibinitperiod},
+         given={Tomas},
+         giveni={T\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {arXiv}%
+    }
+    \strng{namehash}{LB+1}
+    \strng{fullhash}{LBASÃLNPT1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2019}
+    \field{labeldatesource}{}
+    \field{sortinit}{L}
+    \field{sortinithash}{L}
+    \field{title}{Temporal Fusion Transformers for Interpretable Multi-horizon
+  Time Series Forecasting}
+    \verb{url}
+    \verb https://arxiv.org/abs/1912.09363
+    \endverb
+    \field{volume}{arXiv:1912.09363}
+    \field{journaltitle}{arXiv preprint}
+    \field{year}{2019}
+  \endentry
+\enddatalist
+\endinput

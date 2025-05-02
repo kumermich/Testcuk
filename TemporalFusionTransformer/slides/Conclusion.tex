@@ -1,0 +1,572 @@
+\Mysection{Overview of TFT}
+
+\begin{frame}{Overview of TFT}
+
+	
+	\begin{itemize}
+		\item TFT is a deep learning model designed for time series prediction.
+		\item It extends the Transformer architecture to perform temporal processing.
+		\item TFT learns patterns at different time scales, including daily, weekly, monthly, and quarterly.
+		\item This allows for capturing complex temporal dependencies in the data.
+	\end{itemize}
+	
+\end{frame}
+
+\Mysection{Main Components of TFT}
+
+\begin{frame}{Main Components of TFT}
+		\begin{itemize}
+		\item Gating Mechanism: Provides network complexity and flexibility by skipping unused components.
+		\item Variable Selection Network: Selects relevant input variables at each timestamp.\newpage
+		\item Static Covariate Encoders: Integrates static features into the network to regulate temporal dynamics.
+		\item Time Processing: Learns long-term and short-term relationships from observed and known time.
+		\item Prediction Range Determination: Predicts quantiles to determine the range of possible target values.
+		\end{itemize}
+	
+\end{frame}
+
+\Mysection{Detailed Components of TFT}
+\begin{frame}{Detailed Components of TFT}
+
+\begin{itemize}
+	\item Gating Mechanism:
+	\begin{itemize}
+		\item Provides network complexity and flexibility.
+		\item Skips unused components to accommodate various datasets and scenarios.
+	\end{itemize}
+	
+	\item Variable Selection Network:
+	\begin{itemize}
+		\item Selects relevant input variables at each timestamp based on their importance.
+	\end{itemize}
+	
+	\item Static Covariate Encoders:
+	\begin{itemize}
+		\item Integrates static features into the network to regulate temporal dynamics.
+		\item Encodes context vectors to incorporate static information.
+	\end{itemize}
+	\newpage
+	\item Time Processing:
+	\begin{itemize}
+		\item Learns long-term and short-term relationships from observed and known time.
+		\item Utilizes sequence-to-sequence layers and interpretable multi-head attention blocks.
+	\end{itemize}
+	
+	\item Prediction Range Determination:
+	\begin{itemize}
+		\item Predicts quantiles to determine the range of possible target values in each prediction interval.
+		\item Provides uncertainty estimation for improved decision-making.
+	\end{itemize}
+\end{itemize}
+	
+\end{frame}
+
+	
+
+
+
+\Mysection{Training Process}
+
+\begin{frame}{Training Process}
+	\begin{itemize}
+		\item Data Cleaning:
+		\begin{itemize}
+			\item Remove or impute missing values.
+			\item Handle outliers and anomalies.
+		\end{itemize}
+		
+		\item Feature Engineering:
+		\begin{itemize}
+			\item Create new features based on domain knowledge.
+			\item Transform variables to better represent relationships.
+		\end{itemize}
+		
+		\item Normalization:
+		\begin{itemize}
+			\item Scale features to a similar range to improve convergence during training.
+		\end{itemize}
+	\end{itemize}	
+\end{frame}
+
+	\begin{frame}
+	\textbf{Training Methodology for TFT}
+	\begin{itemize}
+		\item Training Data Split:
+		\begin{itemize}
+			\item Split dataset into training, validation, and test sets.
+		\end{itemize}
+		
+		\item Model Training:
+		\begin{itemize}
+			\item Train TFT model using training data.
+			\item Validate model performance on validation set.
+		\end{itemize}
+		
+		\item Hyperparameter Tuning:
+		\begin{itemize}
+			\item Optimize hyperparameters using techniques like grid search or random search.
+		\end{itemize}
+	\end{itemize}	
+\end{frame}
+
+\begin{frame}
+	
+	\textbf{Optimization Techniques Used}
+	\begin{itemize}
+		\item Gradient Descent:
+		\begin{itemize}
+			\item Update model parameters to minimize the loss function.
+		\end{itemize}
+		
+		\item Learning Rate Scheduling:
+		\begin{itemize}
+			\item Adjust learning rate during training to improve convergence.
+		\end{itemize}
+		
+		\item Regularization:
+		\begin{itemize}
+			\item Apply techniques like L1/L2 regularization to prevent overfitting.
+		\end{itemize}
+		
+		\item Early Stopping:
+		\begin{itemize}
+			\item Stop training when model performance on the validation set stops improving.
+		\end{itemize}
+	\end{itemize}	
+\end{frame}
+
+\begin{frame}
+	
+	\textbf{Evaluation and Performance}
+	\begin{itemize}
+		\item Mean Absolute Error (MAE):
+		\begin{itemize}
+			\item Measures the average absolute difference between predicted and actual values.
+		\end{itemize}
+		
+		\item Root Mean Squared Error (RMSE):
+		\begin{itemize}
+			\item Measures the square root of the average squared difference between predicted and actual values.
+		\end{itemize}
+		
+		\item Mean Absolute Percentage Error (MAPE):
+		\begin{itemize}
+			\item Measures the average percentage difference between predicted and actual values.
+		\end{itemize}
+		
+		\item R-squared (R2):
+		\begin{itemize}
+			\item Measures the proportion of the variance in the dependent variable that is predictable from the independent variables.
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+
+
+
+\Mysection{Comparison with Other Models/Methods}
+\renewcommand{\tablename}{Table}
+%\begin{frame}{Table}
+	\begin{table}[!ht]
+		\small % Adjust font size
+		\centering
+		\setlength{\tabcolsep}{5pt} % Adjust column separation
+		\begin{tabular}{|l|p{9cm}|} % Reduce the width of the second column
+			\hline
+			\textbf{Model/Method} & \textbf{Strengths of Models} \\ \hline
+			\textbf{LSTM} & 
+			\begin{itemize}
+				\item Captures long-term dependencies effectively.
+				\item Handles sequential data well.
+			\end{itemize} \\ \hline
+			\textbf{ARIMA} &
+			\begin{itemize}
+				\item Simple and interpretable model structure.
+				\item Well-suited for stationary data.
+			\end{itemize} \\ \hline
+			\textbf{Exponential Smoothing} &
+			\begin{itemize}
+				\item Simple and computationally efficient.
+				\item Effective for short-term forecasting.
+			\end{itemize} \\ \hline
+			\textbf{TFT} &
+			\begin{itemize}
+				\item Captures complex temporal dependencies.
+				\item Handles multiple input variables and exogenous features.
+			\end{itemize} \\ \hline
+		\end{tabular}
+		\caption{Strengths of TFT Compared to Other Models/Methods}
+		\label{tab:comparison}
+	\end{table}
+	
+%\end{frame}	
+
+
+\begin{frame}
+		\textbf{Case Studies or Examples Demonstrating TFT's Performance}
+	\begin{itemize}
+		\item Retail Sales Forecasting:
+		\begin{itemize}
+			\item Predicting future sales volumes for retail stores based on historical sales data.
+		\end{itemize}
+		
+		\item Energy Demand Forecasting:
+		\begin{itemize}
+			\item Predicting electricity consumption patterns to optimize energy production and distribution.
+		\end{itemize}
+		
+		\item Stock Price Prediction:
+		\begin{itemize}
+			\item Forecasting stock prices based on historical market data to support investment decisions.
+		\end{itemize}
+		
+		\item Traffic Flow Prediction:
+		\begin{itemize}
+			\item Predicting traffic congestion patterns to optimize transportation infrastructure and route planning.
+		\end{itemize}
+	\end{itemize}	
+\end{frame}	
+
+				\begin{frame}
+			\textbf{Applications of Temporal Fusion Transformer}
+	\begin{itemize}
+		\item Retail: Forecasting demand for products, optimizing inventory management.
+		\item Finance: Predicting stock prices, analyzing financial trends.
+		\item Healthcare: Forecasting patient admissions, optimizing resource allocation.
+		\item Energy: Predicting energy consumption, optimizing energy production.
+	\end{itemize}
+	\end{frame}	
+		
+\begin{frame}
+			\textbf{Real-world use cases and success stories}
+		\begin{itemize}
+			\item Retail: A large retail chain used TFT to accurately forecast demand for seasonal products, reducing overstocking and minimizing lost sales.
+			\item Finance: A financial institution implemented TFT to predict stock prices with high accuracy, enabling informed investment decisions.
+			\item Healthcare: A hospital used TFT to forecast patient admissions, allowing them to allocate resources efficiently and improve patient care.
+			\item Energy: An energy company applied TFT to predict energy consumption patterns, optimizing energy production and distribution.
+		\end{itemize}
+			\end{frame}
+			
+			\begin{frame}
+			\textbf{Potential impact on businesses and industries}
+	\begin{itemize}
+		\item Increased Efficiency: TFT enables businesses to make more accurate forecasts, leading to better resource allocation and operational efficiency.
+		\item Cost Savings: By reducing overstocking, minimizing lost sales, and optimizing resource allocation, TFT helps businesses save costs.
+		\item Improved Decision-Making: Accurate forecasts provided by TFT empower businesses to make informed decisions, leading to better outcomes and higher profitability.
+		\item Competitive Advantage: Businesses that leverage TFT gain a competitive edge by being able to anticipate market trends and customer demands more effectively.
+	\end{itemize}
+	\end{frame}
+	
+			
+\Mysection{Case Study: Stock Prediction}
+
+\lstdefinestyle{mystyle}{
+	backgroundcolor=\color{backcolour},
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{blue},
+	numberstyle=\tiny\color{codegray},
+	stringstyle=\color{codepurple},
+	basicstyle=\footnotesize\ttfamily,
+	breakatwhitespace=false,
+	breaklines=true,
+	captionpos=b,
+	keepspaces=true,
+	numbers=left,
+	numbersep=5pt,
+	showspaces=false,
+	showstringspaces=false,
+	showtabs=false,
+	tabsize=2
+}
+
+	
+\begin{frame}[fragile]
+	\frametitle{Stock Price Prediction using TFT (Part 1)}
+	
+	\begin{lstlisting}[style=mystyle, language=Python, caption={Stock Price Prediction using TFT (Part 1)}]
+		import numpy as np
+		import pandas as pd
+		import tensorflow as tf
+		from tensorflow.keras import layers
+		from tensorflow.keras.models import Model
+		from sklearn.preprocessing import MinMaxScaler
+		
+		# Load data
+		data = pd.read_csv('stock_prices.csv')
+		
+		# Preprocess data
+		scaler = MinMaxScaler()
+		data_scaled = scaler.fit_transform(data)
+		
+		# Define function to create input features and target
+		def create_dataset(data, time_steps):
+		X, y = [], []
+		for i in range(len(data) - time_steps):
+		X.append(data[i:(i + time_steps)])
+		y.append(data[i + time_steps])
+		return np.array(X), np.array(y)
+		
+		# Define parameters
+		time_steps = 30
+		n_features = data_scaled.shape[1]
+		
+		# Create train and test sets
+		X_train, y_train = create_dataset(data_scaled, time_steps)
+		X_test, y_test = create_dataset(data_scaled, time_steps)
+	\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Stock Price Prediction using TFT (Part 2)}
+	
+	\begin{lstlisting}[style=mystyle, language=Python, caption={Stock Price Prediction using TFT (Part 2)}]
+		# Define Temporal Fusion Transformer model
+		inputs = layers.Input(shape=(time_steps, n_features))
+		encoder = layers.LSTM(64, return_sequences=True)(inputs)
+		encoder = layers.Dropout(0.2)(encoder)
+		encoder = layers.LSTM(32, return_sequences=True)(encoder)
+		encoder = layers.Flatten()(encoder)
+		encoder = layers.Dense(16)(encoder)
+		
+		decoder = layers.RepeatVector(1)(encoder)
+		decoder = layers.LSTM(32, return_sequences=True)(decoder)
+		decoder = layers.Dropout(0.2)(decoder)
+		decoder = layers.LSTM(64, return_sequences=True)(decoder)
+		output = layers.TimeDistributed(layers.Dense(n_features))(decoder)
+	\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Stock Price Prediction using TFT (Part 3)}
+	
+	\begin{lstlisting}[style=mystyle, language=Python, caption={Stock Price Prediction using TFT (Part 3)}]
+		model = Model(inputs=inputs, outputs=output)
+		model.compile(optimizer='adam', loss='mse')
+		
+		# Train model
+		model.fit(X_train, y_train, epochs=100, batch_size=32)
+		
+		# Evaluate model
+		loss = model.evaluate(X_test, y_test)
+		print('Test Loss:', loss)
+		
+		# Make predictions
+		predictions = model.predict(X_test)
+		
+		# Inverse scaling
+		predictions_inv = scaler.inverse_transform(predictions)
+		y_test_inv = scaler.inverse_transform(y_test)
+		
+		# Visualize predictions
+		import matplotlib.pyplot as plt
+		plt.plot(predictions_inv[:,0], label='Predicted')
+		plt.plot(y_test_inv[:,0], label='True')
+		plt.legend()
+		plt.show()
+	\end{lstlisting}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Code Explanation}
+	\begin{itemize}
+		\item Load historical stock price data from a CSV file.
+		\item Preprocess the data using MinMaxScaler.
+		\item Create input features and target using a sliding window approach.
+		\item Define a Temporal Fusion Transformer model using TensorFlow's Keras API.
+		\item Compile and train the model on the training data.
+		\item Evaluate the model on the test data.
+		\item Make predictions using the trained model.
+		\item Inverse scaling to obtain the actual stock prices.
+		\item Visualize the predicted and actual stock prices.
+		\item Make sure to replace 'stockprices.csv' with the path to your actual CSV file containing stock price data. Also, adjust the model architecture and hyperparameters as needed for your specific task and dataset.
+	\end{itemize}
+\end{frame}
+
+
+\Mysection{Hyperparameters}
+\begin{frame}
+\begin{itemize}[label=--]
+	\item \textbf{Num\_encoder\_steps}: Number of time steps to use in the encoder.
+	\item \textbf{Num\_epochs}: Number of training epochs.
+	\item \textbf{Batch\_size}: Number of samples per batch during training.
+	\item \textbf{Learning\_rate}: Rate at which the model adjusts its parameters during training.
+	\item \textbf{Num\_heads}: Number of attention heads in the multi-head self-attention mechanism.
+	\item \textbf{Num\_layers}: Number of transformer layers in the model.
+	\item \textbf{Hidden\_layer\_size}: Dimensionality of the hidden layers in the feedforward network.
+	\item \textbf{Dropout\_rate}: Dropout rate for regularization.
+	\item \textbf{Loss}: Type of loss function to optimize during training (e.g., mean squared error, mean absolute error).
+	\item \textbf{Seasonality}: Number of seasonal periods to consider in the model.
+\end{itemize}
+\end{frame}
+
+
+
+\newpage
+\Mysection{Package}	
+	
+\begin{frame}
+\begin{itemize}[label=--]
+	\item The Temporal Fusion Transformer (TFT) can be implemented using popular deep learning frameworks such as TensorFlow or PyTorch.
+	\item In TensorFlow, you can use the \texttt{tensorflow} package, while in PyTorch, you can use the \texttt{torch} package.
+	\item Additionally, the TFT may rely on other packages for data preprocessing, visualization, and evaluation.
+\end{itemize}
+\end{frame}
+	
+	
+
+			
+\Mysection{Configuration}
+\begin{frame}{Configuration}
+\begin{itemize}[label=--]
+	\item The configuration includes specifying the architecture of the Temporal Fusion Transformer, including the number of layers, hidden units, attention mechanisms, and other architectural details.
+	\item It also involves setting hyperparameters such as learning rate, dropout rate, batch size, and optimizer choice (e.g., Adam, SGD).
+	\item Configuration may also include data preprocessing steps such as scaling, normalization, and feature engineering.
+\end{itemize}
+\end{frame}
+
+\Mysection{Input}
+\begin{frame}{Input}		
+	
+\begin{itemize}[label=--]
+	\item The input to the Temporal Fusion Transformer typically consists of historical time series data, including past observations of the target variable and relevant covariates.
+	\item Time series data may be structured as sequences of observations with corresponding timestamps.
+	\item Covariates could include exogenous variables such as weather data, economic indicators, or other factors that may influence the target variable.
+	\item Inputs are usually preprocessed, scaled, and formatted to be compatible with the TFT architecture and requirements.
+\end{itemize}
+\end{frame}
+
+\Mysection{Output}
+\begin{frame}{Output}			
+	\begin{itemize}[label=--]
+		\item The output of the Temporal Fusion Transformer is a forecast for future time steps based on the input data.
+		\item For each time step in the forecast horizon, the model produces a predicted value for the target variable.
+		\item Additionally, the model may provide uncertainty estimates or confidence intervals for the forecasts, depending on the chosen configuration and loss function.
+		\item Outputs may be post-processed, evaluated, and visualized to assess the performance of the model and make informed decisions based on the forecasts.
+	\end{itemize}
+	
+\end{frame}
+
+\Mysection{Advantages of TFT}
+\begin{frame}{Advantages of TFT}
+	\begin{itemize}
+		\item \textbf{Flexible Architecture:} TFT's architecture is highly flexible, allowing it to handle various types of time series data, including univariate and multivariate series, as well as series with static and dynamic features.
+		
+		\item \textbf{Temporal Attention Mechanism:} TFT incorporates a temporal attention mechanism, enabling it to capture dependencies and patterns across different time steps in the time series data. This attention mechanism helps in learning long-term dependencies and improving forecasting accuracy.
+		
+		\item \textbf{Multimodal Inputs:} TFT can handle multimodal inputs, including both categorical and continuous features. This versatility allows it to leverage diverse information sources for making accurate predictions.
+
+		\item \textbf{Scalability:} TFT is scalable to long time series and large datasets. Its transformer-based architecture allows for parallel processing, making it suitable for handling large-scale forecasting tasks efficiently.
+		\end{itemize}	
+\end{frame}
+	
+	
+		\begin{frame}
+				\begin{itemize}
+		\item \textbf{Interpretability:} TFT provides interpretability through its attention mechanism, allowing users to understand which time steps and features contribute most to the predictions. This interpretability is crucial for understanding model decisions and gaining insights from the forecasting process.
+		
+		\item \textbf{Dynamic Integration of Exogenous Variables:} TFT dynamically integrates exogenous variables (static and dynamic features) into the forecasting process, enabling it to capture the impact of external factors on the time series behavior.
+		
+		\item \textbf{State-of-the-Art Performance:} TFT has demonstrated state of the art performance on various time series forecasting benchmarks, outperforming traditional methods and other deep learning models in terms of accuracy and generalization.
+	\end{itemize}	
+\end{frame}
+
+\Mysection{Challenges and Limitations}
+	\begin{frame}
+\begin{itemize}
+	\item Data Quality: Ensuring the quality and consistency of input data can be challenging, especially when dealing with noisy or incomplete data.
+	\item Model Complexity: TFT's architecture is complex, requiring significant computational resources and expertise for implementation.
+	\item Interpretability: Interpreting the predictions made by TFT and understanding the reasoning behind them can be difficult due to the model's black-box nature.
+	\item Scalability: Scaling TFT to handle large datasets and real-time processing may pose challenges in terms of computational efficiency and resource requirements.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+	\textbf{Limitations of the model}
+	
+\begin{itemize}
+	\item Limited Historical Data: TFT may struggle with forecasting tasks where historical data is sparse or inconsistent, leading to less accurate predictions.
+	\item Overfitting: Like other deep learning models, TFT is susceptible to overfitting, especially when trained on small datasets or noisy data.
+	\item Lack of Generalization: TFT's performance may vary across different domains and datasets, making it less suitable for universal applications.
+	\item Computational Cost: Training and deploying TFT models can be computationally expensive, limiting its accessibility to organizations with limited resources.
+\end{itemize}
+	
+
+\end{frame}
+
+\Mysection{Areas for Future Research and Improvement}
+\begin{frame}{Areas for Future Research and Improvement}
+	
+	
+	
+	
+\begin{itemize}
+	\item Explainability: Developing techniques to improve the interpretability of TFT's predictions and provide insights into the model's decision-making process.
+	\item Robustness: Enhancing TFT's robustness to handle outliers, missing data, and other challenges commonly encountered in real-world scenarios.
+	\item Scalability: Researching methods to improve the scalability and efficiency of TFT for handling large-scale datasets and real-time applications.
+	\item Transfer Learning: Exploring the potential of transfer learning techniques to transfer knowledge from pre-trained TFT models to new forecasting tasks.
+	\item Novel Architectures: Investigating novel architectures and model enhancements to address the limitations and challenges of current TFT implementations.
+\end{itemize}
+		\end{frame}
+		
+	\begin{frame}{Future Directions}
+		
+		
+		
+		
+	\begin{itemize}
+		\item Exploration of novel deep learning architectures tailored for specific forecasting tasks.
+		\item Integration of domain knowledge and expert insights into model development to enhance accuracy and interpretability.
+		\item Research into automated feature engineering techniques to improve model performance on diverse datasets.
+	\end{itemize}
+		
+		
+	\end{frame}
+	
+		\begin{frame}{Integration of TFT with other technologies}
+\begin{itemize}
+	\item Collaboration with IoT devices to incorporate real-time sensor data for enhanced forecasting capabilities in various domains such as smart manufacturing and healthcare.
+	\item Integration with cloud computing platforms to leverage distributed computing resources for scalability and efficiency.
+	\item Exploration of federated learning approaches to enable decentralized model training while preserving data privacy and security.
+\end{itemize}
+		\end{frame}
+		
+			\begin{frame}{Emerging trends in the field}
+				\begin{itemize}
+					\item Adoption of meta-learning techniques to enable models to learn from past forecasting experiences and adapt to new forecasting tasks more effectively.
+					\item Exploration of uncertainty quantification methods to provide probabilistic forecasts and estimate prediction confidence intervals.
+					\item Integration of causal inference methods to identify causal relationships and understand the impact of interventions on time series data.
+				\end{itemize}
+					\end{frame}
+					
+\Mysection{Conclusion}
+\begin{frame}
+In summary, the Temporal Fusion Transformer (TFT) represents a significant advancement in time series forecasting. Throughout this presentation, the intricate details of TFT have been explored, revealing its vast potential across various industries.
+
+\subsection*{Recap of Key Points}
+
+TFT integrates neural networks with traditional statistical methods to capture intricate temporal dependencies in data. Its versatility in handling multiple inputs and generating interpretable forecasts sets it apart from conventional techniques.
+
+\subsection*{Importance of TFT in Advancing Time Series Forecasting}
+
+TFT signifies a significant leap forward in time series forecasting. Its innovative architecture allows for seamless integration of diverse data sources, empowering organizations with more accurate predictions to drive growth and innovation.
+
+\subsection*{Call to Action and Future Implications}
+
+Looking ahead, there's immense potential for further advancements in TFT and its applications. Researchers and practitioners are encouraged to explore new avenues for integrating TFT with other technologies, such as AI and ML, to unlock greater capabilities.
+\end{frame}
+
+\begin{frame}
+In conclusion, TFT stands as a beacon of progress in time series forecasting, offering unparalleled opportunities for businesses and industries to navigate the complexities of an evolving landscape. Let us embrace this technology and embark on a journey of discovery and innovation.
+\end{frame}
+
+\Mysection{Further Reading}
+\begin{frame}
+\begin{itemize}
+	\item Stock Price Prediction Based on Temporal Fusion Transformer.\cite{Hu:2021}\href{https://ieeexplore.ieee.org/document/9731073}{Stock Prediction Document}
+	\item Wheat Yield Prediction using Temporal Fusion Transformers.\cite{Junankar:2023}\href{https://ieeexplore.ieee.org/document/10101144}{Wheat Prediction Document}
+	\item Traffic Spatial-Temporal Transformer for Traffic Prediction.\cite{He:2023}\href{https://ieeexplore.ieee.org/document/10271152}{Traffic Prediction Document}
+\end{itemize}
+\end{frame}
+
+\Mysection{References}

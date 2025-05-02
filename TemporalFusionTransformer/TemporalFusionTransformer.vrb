@@ -1,0 +1,27 @@
+\frametitle{Stock Price Prediction using TFT (Part 3)}
+	
+	\begin{lstlisting}[style=mystyle, language=Python, caption={Stock Price Prediction using TFT (Part 3)}]
+		model = Model(inputs=inputs, outputs=output)
+		model.compile(optimizer='adam', loss='mse')
+		
+		# Train model
+		model.fit(X_train, y_train, epochs=100, batch_size=32)
+		
+		# Evaluate model
+		loss = model.evaluate(X_test, y_test)
+		print('Test Loss:', loss)
+		
+		# Make predictions
+		predictions = model.predict(X_test)
+		
+		# Inverse scaling
+		predictions_inv = scaler.inverse_transform(predictions)
+		y_test_inv = scaler.inverse_transform(y_test)
+		
+		# Visualize predictions
+		import matplotlib.pyplot as plt
+		plt.plot(predictions_inv[:,0], label='Predicted')
+		plt.plot(y_test_inv[:,0], label='True')
+		plt.legend()
+		plt.show()
+	\end{lstlisting}
